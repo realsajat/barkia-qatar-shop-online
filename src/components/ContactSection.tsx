@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Phone, MapPin } from "lucide-react";
+import { ExternalLink, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -23,7 +23,7 @@ export default function ContactSection() {
               </p>
             </div>
             
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-6">
               <div className="flex items-center gap-3">
                 <div className="bg-primary/10 p-2 rounded-full">
                   <Phone size={20} className="text-primary" />
@@ -43,6 +43,27 @@ export default function ContactSection() {
                   <p className="font-poppins text-sm text-muted-foreground">Doha, Qatar</p>
                 </div>
               </div>
+            </div>
+            
+            <div className="flex justify-center space-x-4 mb-6">
+              <a 
+                href="https://facebook.com/alarabiacarpet" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://instagram.com/alarabiacarpet" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-gradient-to-br from-purple-600 to-pink-500 text-white p-2 rounded-full hover:from-purple-700 hover:to-pink-600 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
             </div>
             
             <Button 

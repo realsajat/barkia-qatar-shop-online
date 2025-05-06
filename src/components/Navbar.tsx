@@ -1,62 +1,88 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Home, ShoppingCart, Phone, Info } from "lucide-react";
+import { Menu, X, Home, ShoppingCart, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({behavior: 'smooth'});
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'});
+      setActiveSection(id);
+      setIsOpen(false);
+    }
   };
+
+  // Track scroll position to update active link
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "products", "contact"];
+      const currentPos = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          
+          if (currentPos >= top && currentPos <= top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Helper function to determine if a section is active
+  const isActive = (section: string) => activeSection === section;
 
   return (
     <header className="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <img 
-            src="/public/lovable-uploads/a0ec216d-dd84-4858-84bf-633bfd31d33c.png" 
+            src="/public/lovable-uploads/27cc3b08-4889-48d9-8c94-37e93eda66bc.png" 
             alt="Al Arabia Qarpets Logo" 
-            className="h-10 w-10"
+            className="h-12 w-12 object-contain drop-shadow-lg"
           />
           <span className="font-playfair text-xl font-bold hidden sm:inline-block">Al Arabia Qarpets</span>
         </Link>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <a 
-            href="#" 
-            onClick={(e) => {e.preventDefault(); scrollToSection('home')}} 
-            className="flex items-center space-x-1 font-poppins hover:text-accent-DEFAULT transition-colors"
+          <button 
+            onClick={() => scrollToSection('home')} 
+            className={`flex items-center space-x-1 font-poppins transition-colors ${
+              isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT'
+            }`}
           >
             <Home size={16} />
             <span>Home</span>
-          </a>
-          <a 
-            href="#products" 
-            onClick={(e) => {e.preventDefault(); scrollToSection('products')}} 
-            className="flex items-center space-x-1 font-poppins hover:text-accent-DEFAULT transition-colors"
+          </button>
+          <button 
+            onClick={() => scrollToSection('products')} 
+            className={`flex items-center space-x-1 font-poppins transition-colors ${
+              isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT'
+            }`}
           >
             <ShoppingCart size={16} />
             <span>Products</span>
-          </a>
-          <a 
-            href="#services" 
-            onClick={(e) => {e.preventDefault(); scrollToSection('services')}} 
-            className="flex items-center space-x-1 font-poppins hover:text-accent-DEFAULT transition-colors"
+          </button>
+          <Link
+            to="/about"
+            className="flex items-center space-x-1 font-poppins text-accent-DEFAULT font-semibold hover:text-accent-DEFAULT/90 transition-colors"
           >
             <Info size={16} />
-            <span>Services</span>
-          </a>
-          <a 
-            href="#contact" 
-            onClick={(e) => {e.preventDefault(); scrollToSection('contact')}} 
-            className="flex items-center space-x-1 font-poppins hover:text-accent-DEFAULT transition-colors"
-          >
-            <Phone size={16} />
-            <span>Contact</span>
-          </a>
+            <span>About</span>
+          </Link>
           <Button asChild className="bg-green-600 hover:bg-green-700 text-white">
             <a 
               href="https://wa.me/+97455512858" 
@@ -64,7 +90,6 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="flex items-center space-x-2"
             >
-              <Phone size={16} />
               <span>Contact Us</span>
             </a>
           </Button>
@@ -82,38 +107,32 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-primary border-t border-white/10 py-4">
           <div className="flex flex-col space-y-4 px-6">
-            <a 
-              href="#home" 
-              onClick={(e) => {e.preventDefault(); scrollToSection('home'); setIsOpen(false);}} 
-              className="flex items-center space-x-2 font-poppins py-2"
+            <button 
+              onClick={() => scrollToSection('home')}
+              className={`flex items-center space-x-2 font-poppins py-2 ${
+                isActive('home') ? 'text-accent-DEFAULT font-semibold' : ''
+              }`}
             >
               <Home size={16} />
               <span>Home</span>
-            </a>
-            <a 
-              href="#products" 
-              onClick={(e) => {e.preventDefault(); scrollToSection('products'); setIsOpen(false);}} 
-              className="flex items-center space-x-2 font-poppins py-2"
+            </button>
+            <button 
+              onClick={() => scrollToSection('products')}
+              className={`flex items-center space-x-2 font-poppins py-2 ${
+                isActive('products') ? 'text-accent-DEFAULT font-semibold' : ''
+              }`}
             >
               <ShoppingCart size={16} />
               <span>Products</span>
-            </a>
-            <a 
-              href="#services" 
-              onClick={(e) => {e.preventDefault(); scrollToSection('services'); setIsOpen(false);}} 
-              className="flex items-center space-x-2 font-poppins py-2"
+            </button>
+            <Link
+              to="/about"
+              className="flex items-center space-x-2 font-poppins py-2 text-accent-DEFAULT font-semibold"
+              onClick={() => setIsOpen(false)}
             >
               <Info size={16} />
-              <span>Services</span>
-            </a>
-            <a 
-              href="#contact" 
-              onClick={(e) => {e.preventDefault(); scrollToSection('contact'); setIsOpen(false);}} 
-              className="flex items-center space-x-2 font-poppins py-2"
-            >
-              <Phone size={16} />
-              <span>Contact</span>
-            </a>
+              <span>About</span>
+            </Link>
             <Button asChild className="w-full bg-green-600 hover:bg-green-700 text-white">
               <a 
                 href="https://wa.me/+97455512858" 
@@ -121,7 +140,6 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2"
               >
-                <Phone size={16} />
                 <span>Contact Us</span>
               </a>
             </Button>

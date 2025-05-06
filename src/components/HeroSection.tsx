@@ -1,11 +1,12 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const [isLogoHovered, setIsLogoHovered] = useState(false);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   const handleLogoMouseEnter = () => {
     setIsLogoHovered(true);
@@ -13,11 +14,37 @@ export default function HeroSection() {
 
   const handleLogoMouseLeave = () => {
     setIsLogoHovered(false);
+    setRotation({ x: 0, y: 0 });
+  };
+
+  const handleLogoMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isLogoHovered) return;
+    
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    // Normalize and limit rotation
+    setRotation({ 
+      x: -(y / 30), 
+      y: x / 30 
+    });
   };
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({behavior: 'smooth'});
   };
+
+  // Pulse animation effect
+  const [isPulsing, setIsPulsing] = useState(true);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsPulsing(prev => !prev);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="home" className="relative bg-primary text-white pb-16 pt-20 lg:pt-24 overflow-hidden">
@@ -36,44 +63,49 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
-                onClick={(e) => {e.preventDefault(); scrollToSection('products')}}
+                onClick={() => scrollToSection('products')}
                 size="lg" 
                 className="bg-white text-primary hover:bg-white/90 flex items-center gap-2"
               >
                 Explore Products <ArrowRight size={16} />
               </Button>
               <Button 
-                asChild 
+                onClick={() => scrollToSection('contact')}
                 size="lg" 
                 variant="outline" 
                 className="border-white text-white hover:bg-white/10"
               >
-                <a 
-                  href="https://wa.me/+97455512858" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <Phone size={16} />
-                  Contact Us
-                </a>
+                Contact Us
               </Button>
             </div>
           </div>
           <div className="flex justify-center lg:justify-end">
             <div 
-              className={`relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all duration-300 transform ${isLogoHovered ? 'scale-110' : ''}`}
+              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 perspective-800"
               onMouseEnter={handleLogoMouseEnter}
               onMouseLeave={handleLogoMouseLeave}
+              onMouseMove={handleLogoMouseMove}
               onClick={() => scrollToSection('products')}
-              style={{ cursor: 'pointer' }}
+              style={{ 
+                cursor: 'pointer',
+                perspective: '1000px'
+              }}
             >
-              <div className="absolute inset-0 flex items-center justify-center bg-white/10 rounded-full p-4">
-                <img 
-                  src="/public/lovable-uploads/a0ec216d-dd84-4858-84bf-633bfd31d33c.png" 
-                  alt="Al Arabia Qarpets Logo" 
-                  className="w-full h-full object-contain"
-                />
+              <div 
+                className="absolute inset-0 flex items-center justify-center rounded-full p-4 transition-all duration-300"
+                style={{ 
+                  transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+                  transition: isLogoHovered ? 'none' : 'transform 0.5s ease-out'
+                }}
+              >
+                <div className={`relative w-full h-full ${isPulsing ? 'animate-pulse' : ''}`}>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-300/30 to-amber-600/30 blur-md"></div>
+                  <img 
+                    src="/public/lovable-uploads/27cc3b08-4889-48d9-8c94-37e93eda66bc.png" 
+                    alt="Al Arabia Qarpets Logo" 
+                    className={`w-full h-full object-contain drop-shadow-xl transition-all duration-300 ${isLogoHovered ? 'scale-110' : ''}`}
+                  />
+                </div>
               </div>
             </div>
           </div>

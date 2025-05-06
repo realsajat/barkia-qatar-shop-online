@@ -13,13 +13,13 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <div id="products">
+        <section id="products">
           <ProductsSection />
-        </div>
-        <div id="services">
-          <ServicesSection />
-        </div>
-        <ContactSection />
+        </section>
+        <ServicesSection />
+        <section id="contact">
+          <ContactSection />
+        </section>
       </main>
       <Footer />
       <WhatsappButton />
