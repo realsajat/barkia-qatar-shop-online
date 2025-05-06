@@ -5,7 +5,7 @@ import { ExternalLink, Phone, MapPin } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="py-16 bg-primary text-white">
+    <section id="contact" className="py-16 bg-primary text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
@@ -30,7 +30,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="font-poppins font-medium">WhatsApp</p>
-                  <p className="font-poppins text-sm text-muted-foreground">+974 0000 0000</p>
+                  <p className="font-poppins text-sm text-muted-foreground">+974 5551 2858</p>
                 </div>
               </div>
               
@@ -50,7 +50,7 @@ export default function ContactSection() {
               className="w-full bg-green-600 hover:bg-green-700 text-white"
             >
               <a 
-                href="https://wa.me/+97400000000" 
+                href="https://wa.me/+97455512858" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2"

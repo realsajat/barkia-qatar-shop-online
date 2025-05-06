@@ -11,7 +11,7 @@ export default function WhatsappButton() {
         asChild
       >
         <a
-          href="https://wa.me/+97400000000"
+          href="https://wa.me/+97455512858"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contact us on WhatsApp"

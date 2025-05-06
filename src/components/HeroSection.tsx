@@ -1,11 +1,26 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function HeroSection() {
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
+
+  const handleLogoMouseEnter = () => {
+    setIsLogoHovered(true);
+  };
+
+  const handleLogoMouseLeave = () => {
+    setIsLogoHovered(false);
+  };
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({behavior: 'smooth'});
+  };
+
   return (
-    <section className="relative bg-primary text-white pb-16 pt-20 lg:pt-24 overflow-hidden">
+    <section id="home" className="relative bg-primary text-white pb-16 pt-20 lg:pt-24 overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 to-transparent"></div>
       </div>
@@ -13,7 +28,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="text-center lg:text-left">
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Transform Your Living Space with Barkia Qatar
+              Transform Your Living Space with Al Arabia Qarpets
             </h1>
             <p className="font-poppins text-lg mb-8 text-white/80 max-w-xl mx-auto lg:mx-0">
               Premium home furnishings with free installation and delivery throughout Qatar. 
@@ -21,13 +36,11 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
-                asChild 
+                onClick={(e) => {e.preventDefault(); scrollToSection('products')}}
                 size="lg" 
-                className="bg-white text-primary hover:bg-white/90"
+                className="bg-white text-primary hover:bg-white/90 flex items-center gap-2"
               >
-                <Link to="/products" className="flex items-center gap-2">
-                  Explore Products <ArrowRight size={16} />
-                </Link>
+                Explore Products <ArrowRight size={16} />
               </Button>
               <Button 
                 asChild 
@@ -36,22 +49,29 @@ export default function HeroSection() {
                 className="border-white text-white hover:bg-white/10"
               >
                 <a 
-                  href="https://wa.me/+97400000000" 
+                  href="https://wa.me/+97455512858" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
+                  <Phone size={16} />
                   Contact Us
                 </a>
               </Button>
             </div>
           </div>
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 flex items-center justify-center">
+            <div 
+              className={`relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all duration-300 transform ${isLogoHovered ? 'scale-110' : ''}`}
+              onMouseEnter={handleLogoMouseEnter}
+              onMouseLeave={handleLogoMouseLeave}
+              onClick={() => scrollToSection('products')}
+              style={{ cursor: 'pointer' }}
+            >
+              <div className="absolute inset-0 flex items-center justify-center bg-white/10 rounded-full p-4">
                 <img 
                   src="/public/lovable-uploads/a0ec216d-dd84-4858-84bf-633bfd31d33c.png" 
-                  alt="Barkia Qatar Logo" 
+                  alt="Al Arabia Qarpets Logo" 
                   className="w-full h-full object-contain"
                 />
               </div>
