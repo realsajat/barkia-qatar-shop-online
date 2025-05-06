@@ -139,7 +139,7 @@ const About = () => {
               Contact us today to discuss your home furnishing needs and discover how we can help.
             </p>
             <a 
-              href="https://wa.me/+97400000000" 
+              href="https://wa.me/+97455512858" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-white text-primary rounded-md hover:bg-white/90 transition-colors font-poppins font-medium"
