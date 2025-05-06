@@ -12,14 +12,14 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <HeroSection />
+        <section id="home">
+          <HeroSection />
+        </section>
         <section id="products">
           <ProductsSection />
         </section>
         <ServicesSection />
-        <section id="contact">
-          <ContactSection />
-        </section>
+        <ContactSection />
       </main>
       <Footer />
       <WhatsappButton />

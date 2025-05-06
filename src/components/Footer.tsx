@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, ExternalLink, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -22,35 +22,24 @@ export default function Footer() {
               Premium home furnishing solutions in Qatar. We offer Barkia, PVC barkia, carpets, 
               rollers, sofas, majlis sofas, curtains, and grass carpets.
             </p>
-            <div className="flex space-x-4 mt-4">
-              <a 
-                href="https://facebook.com/alarabiacarpet" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-accent-DEFAULT transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="https://instagram.com/alarabiacarpet" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-accent-DEFAULT transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-            </div>
           </div>
           
           <div>
             <h4 className="font-playfair text-lg font-semibold mb-4">Quick Links</h4>
             <nav className="flex flex-col space-y-2">
-              <a href="#" onClick={(e) => {e.preventDefault(); document.querySelector('main')?.scrollIntoView({behavior: 'smooth'})}} className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Home</a>
-              <a href="#products" onClick={(e) => {e.preventDefault(); document.getElementById('products')?.scrollIntoView({behavior: 'smooth'})}} className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Products</a>
-              <a href="#services" onClick={(e) => {e.preventDefault(); document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})}} className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Services</a>
-              <a href="#contact" onClick={(e) => {e.preventDefault(); document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}} className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Contact Us</a>
+              <Link to="/" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Home</Link>
+              <Link to="/products" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Products</Link>
+              <Link to="/about" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">About Us</Link>
+              <a 
+                href="#contact" 
+                onClick={(e) => {
+                  e.preventDefault(); 
+                  document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})
+                }} 
+                className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors"
+              >
+                Contact Us
+              </a>
             </nav>
           </div>
           
