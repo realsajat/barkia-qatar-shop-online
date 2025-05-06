@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,6 +5,7 @@ import WhatsappButton from "@/components/WhatsappButton";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Phone } from "lucide-react";
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("all");
