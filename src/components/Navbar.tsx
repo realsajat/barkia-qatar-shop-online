@@ -65,7 +65,7 @@ export default function Navbar() {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <img 
-            src="/lovable-uploads/27cc3b08-4889-48d9-8c94-37e93eda66bc.png" 
+            src="/public/lovable-uploads/27cc3b08-4889-48d9-8c94-37e93eda66bc.png" 
             alt="Al Arabia Qarpets Logo" 
             className="h-12 w-12 object-contain drop-shadow-lg"
           />

@@ -14,7 +14,6 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  base: "/barkia-qatar-shop-online/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
