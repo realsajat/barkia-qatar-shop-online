@@ -78,7 +78,7 @@ export default function Navbar() {
             <button 
               onClick={() => scrollToSection('home')} 
               className={`flex items-center space-x-1 font-poppins transition-colors ${
-                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT'
+                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
               }`}
             >
               <Home size={16} />
@@ -88,7 +88,7 @@ export default function Navbar() {
             <Link
               to="/"
               className={`flex items-center space-x-1 font-poppins transition-colors ${
-                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT'
+                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
               }`}
             >
               <Home size={16} />
@@ -99,7 +99,7 @@ export default function Navbar() {
           <Link 
             to="/products" 
             className={`flex items-center space-x-1 font-poppins transition-colors ${
-              isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT'
+              isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
             }`}
           >
             <ShoppingCart size={16} />
@@ -108,9 +108,9 @@ export default function Navbar() {
 
           <Link
             to="/about"
-            className={`flex items-center space-x-1 font-poppins ${
-              isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'text-accent-DEFAULT'
-            } hover:text-accent-DEFAULT/90 transition-colors`}
+            className={`flex items-center space-x-1 font-poppins transition-colors ${
+              isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+            }`}
           >
             <Info size={16} />
             <span>About</span>
@@ -144,7 +144,7 @@ export default function Navbar() {
               <button 
                 onClick={() => scrollToSection('home')}
                 className={`flex items-center space-x-2 font-poppins py-2 ${
-                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : ''
+                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
                 }`}
               >
                 <Home size={16} />
@@ -154,7 +154,7 @@ export default function Navbar() {
               <Link 
                 to="/"
                 className={`flex items-center space-x-2 font-poppins py-2 ${
-                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : ''
+                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -166,7 +166,7 @@ export default function Navbar() {
             <Link 
               to="/products"
               className={`flex items-center space-x-2 font-poppins py-2 ${
-                isActive('products') ? 'text-accent-DEFAULT font-semibold' : ''
+                isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -176,7 +176,9 @@ export default function Navbar() {
 
             <Link
               to="/about"
-              className="flex items-center space-x-2 font-poppins py-2 text-accent-DEFAULT font-semibold"
+              className={`flex items-center space-x-2 font-poppins py-2 ${
+                isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+              }`}
               onClick={() => setIsOpen(false)}
             >
               <Info size={16} />

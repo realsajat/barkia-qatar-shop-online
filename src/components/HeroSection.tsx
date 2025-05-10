@@ -123,15 +123,13 @@ export default function HeroSection() {
                 }}
               >
                 <div className="relative w-full h-full">
-                  {/* 3D shadow effects */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-300/40 to-amber-600/40 blur-md transform -translate-z-10"></div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/30 to-transparent opacity-70 blur-sm transform -translate-z-5"></div>
+                  {/* Removed amber shadow effects */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 blur-md transform -translate-z-10"></div>
                   
                   {/* Main logo with pulsing effect */}
                   <div className={`absolute inset-0 rounded-full ${isPulsing ? 'animate-pulse' : ''}`}>
                     <div className="w-full h-full relative">
-                      {/* Outer glow */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/50 to-amber-700/50 blur-md"></div>
+                      {/* Removed outer amber glow */}
                       
                       {/* Main logo */}
                       <motion.div
