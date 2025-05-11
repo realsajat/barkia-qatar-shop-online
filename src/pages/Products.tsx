@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,12 +5,23 @@ import WhatsappButton from "@/components/WhatsappButton";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Phone } from "lucide-react";
+import { Filter, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerFooter,
+  DrawerClose
+} from "@/components/ui/drawer";
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   // Categories with their products
   const categories = {
@@ -118,6 +128,27 @@ const Products = () => {
     navigate(`/products/${productId}`);
   };
 
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+  };
+
+  // Render the category tabs based on mobile or desktop view
+  const renderCategoryTabs = () => {
+    return (
+      <TabsList className="bg-white p-1 w-full justify-center">
+        {Object.entries(categories).map(([key, { label }]) => (
+          <TabsTrigger 
+            key={key} 
+            value={key}
+            className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-bold whitespace-nowrap"
+          >
+            {label}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+    );
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -136,22 +167,55 @@ const Products = () => {
         {/* Products Section */}
         <section className="py-12 bg-secondary">
           <div className="container mx-auto px-4">
-            {/* Category Tabs - Fixed mobile view */}
-            <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="mb-8">
-              <div className="flex justify-center">
-                <TabsList className="bg-white p-1 overflow-x-auto flex-nowrap w-full justify-start px-4 md:justify-center md:flex-wrap">
-                  {Object.entries(categories).map(([key, { label }]) => (
-                    <TabsTrigger 
-                      key={key} 
-                      value={key}
-                      className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-extrabold whitespace-nowrap"
-                    >
-                      {label}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+            {/* Category Filters - Different visualization based on device */}
+            {isMobile ? (
+              <div className="mb-8 flex justify-center">
+                <Drawer>
+                  <DrawerTrigger asChild>
+                    <Button variant="outline" className="flex items-center gap-2">
+                      <Filter size={18} />
+                      <span>Filter Products ({categories[activeCategory].label})</span>
+                    </Button>
+                  </DrawerTrigger>
+                  <DrawerContent>
+                    <DrawerHeader>
+                      <DrawerTitle className="text-center">Filter Products</DrawerTitle>
+                    </DrawerHeader>
+                    <div className="px-4 pb-4">
+                      <Tabs 
+                        defaultValue="all" 
+                        value={activeCategory} 
+                        onValueChange={handleCategoryChange} 
+                        className="w-full"
+                      >
+                        <div className="flex flex-col gap-2">
+                          {Object.entries(categories).map(([key, { label }]) => (
+                            <TabsTrigger 
+                              key={key} 
+                              value={key}
+                              className="w-full justify-center py-3 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-bold"
+                            >
+                              {label}
+                            </TabsTrigger>
+                          ))}
+                        </div>
+                      </Tabs>
+                    </div>
+                    <DrawerFooter>
+                      <DrawerClose asChild>
+                        <Button variant="outline">Close</Button>
+                      </DrawerClose>
+                    </DrawerFooter>
+                  </DrawerContent>
+                </Drawer>
               </div>
-            </Tabs>
+            ) : (
+              <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="mb-8">
+                <div className="flex justify-center">
+                  {renderCategoryTabs()}
+                </div>
+              </Tabs>
+            )}
             
             {/* Products Grid */}
             {filteredProducts.length > 0 ? (
