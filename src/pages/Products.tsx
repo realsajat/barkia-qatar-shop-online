@@ -19,7 +19,8 @@ const Products = () => {
     barkia: { label: "Barkia & PVC" },
     carpet: { label: "Carpets" },
     furniture: { label: "Furniture" },
-    curtains: { label: "Curtains" }
+    curtains: { label: "Curtains" },
+    interior: { label: "Interior Design" }
   };
   
   // Sample products with their categories
@@ -84,7 +85,7 @@ const Products = () => {
       description: "Contemporary sofas designed for comfort and style.",
       imageSrc: "sofa.png",
       category: "furniture",
-      price: "Starting from 1800 QAR",
+      price: "Starting from 1,800 QAR",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Sofas"
     },
     {
@@ -93,8 +94,17 @@ const Products = () => {
       description: "Traditional yet modern majlis sets perfect for Qatari homes.",
       imageSrc: "majlis-sofa.png",
       category: "furniture",
-      price: "Starting from 4500 QAR",
+      price: "Starting from 4,500 QAR",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Majlis%20Sets"
+    },
+    {
+      id: "luxury-interior-design",
+      name: "Luxury Interior Design",
+      description: "Complete interior design service tailored to your preferences and lifestyle.",
+      imageSrc: "interior.png",
+      category: "interior",
+      price: "Starting from 10,000 QAR",
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Interior%20Design%20Services"
     },
   ];
 
@@ -129,12 +139,12 @@ const Products = () => {
             {/* Category Tabs - Fixed mobile view */}
             <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="mb-8">
               <div className="flex justify-center">
-                <TabsList className="bg-white p-1 overflow-x-auto flex-wrap justify-center">
+                <TabsList className="bg-white p-1 overflow-x-auto flex-nowrap w-full justify-start px-4 md:justify-center md:flex-wrap">
                   {Object.entries(categories).map(([key, { label }]) => (
                     <TabsTrigger 
                       key={key} 
                       value={key}
-                      className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-bold"
+                      className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-extrabold whitespace-nowrap"
                     >
                       {label}
                     </TabsTrigger>

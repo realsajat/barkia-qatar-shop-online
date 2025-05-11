@@ -67,7 +67,7 @@ export default function Navbar() {
           <img 
             src="/lovable-uploads/tran-golden-logo.png" 
             alt="Al Arabia Qarpets Logo" 
-            className="h-12 w-12 object-contain drop-shadow-lg"
+            className="h-12 w-12 object-contain"
           />
           <span className="font-playfair text-xl font-bold hidden sm:inline-block">Al Arabia Carpets</span>
         </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
             <button 
               onClick={() => scrollToSection('home')} 
               className={`flex items-center space-x-1 font-poppins transition-colors ${
-                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+                isActive('home') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
               }`}
             >
               <Home size={16} />
@@ -88,7 +88,7 @@ export default function Navbar() {
             <Link
               to="/"
               className={`flex items-center space-x-1 font-poppins transition-colors ${
-                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+                isActive('home') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
               }`}
             >
               <Home size={16} />
@@ -99,7 +99,7 @@ export default function Navbar() {
           <Link 
             to="/products" 
             className={`flex items-center space-x-1 font-poppins transition-colors ${
-              isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+              isActive('products') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
             }`}
           >
             <ShoppingCart size={16} />
@@ -109,7 +109,7 @@ export default function Navbar() {
           <Link
             to="/about"
             className={`flex items-center space-x-1 font-poppins transition-colors ${
-              isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+              isActive('about') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
             }`}
           >
             <Info size={16} />
@@ -144,7 +144,7 @@ export default function Navbar() {
               <button 
                 onClick={() => scrollToSection('home')}
                 className={`flex items-center space-x-2 font-poppins py-2 ${
-                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+                  isActive('home') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
                 }`}
               >
                 <Home size={16} />
@@ -154,7 +154,7 @@ export default function Navbar() {
               <Link 
                 to="/"
                 className={`flex items-center space-x-2 font-poppins py-2 ${
-                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+                  isActive('home') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -166,7 +166,7 @@ export default function Navbar() {
             <Link 
               to="/products"
               className={`flex items-center space-x-2 font-poppins py-2 ${
-                isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+                isActive('products') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -177,7 +177,7 @@ export default function Navbar() {
             <Link
               to="/about"
               className={`flex items-center space-x-2 font-poppins py-2 ${
-                isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
+                isActive('about') ? 'text-accent-DEFAULT font-extrabold' : 'hover:text-green-400'
               }`}
               onClick={() => setIsOpen(false)}
             >

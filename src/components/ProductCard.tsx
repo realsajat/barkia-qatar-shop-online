@@ -13,7 +13,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ name, description, imageSrc, whatsappLink, onClick }: ProductCardProps) {
   return (
-    <Card className="overflow-hidden border border-border/50 transition-all duration-200 hover:shadow-md">
+    <Card className="overflow-hidden border border-border/50 transition-all duration-200 hover:shadow-md h-full flex flex-col">
       <div 
         className="aspect-square overflow-hidden bg-secondary cursor-pointer"
         onClick={onClick}
@@ -24,17 +24,17 @@ export default function ProductCard({ name, description, imageSrc, whatsappLink,
           className="h-full w-full object-cover transition-transform duration-200 hover:scale-105" 
         />
       </div>
-      <CardContent className="p-4">
+      <CardContent className="p-4 flex flex-col flex-grow">
         <h3 
           className="font-playfair text-lg font-semibold mb-2 hover:text-primary transition-colors cursor-pointer"
           onClick={onClick}
         >
           {name}
         </h3>
-        <p className="font-poppins text-sm text-muted-foreground mb-4">{description}</p>
+        <p className="font-poppins text-sm text-muted-foreground mb-4 flex-grow">{description}</p>
         <Button 
           asChild 
-          className="w-full bg-primary hover:bg-accent text-white"
+          className="w-full bg-primary hover:bg-accent text-white mt-auto"
         >
           <a 
             href={whatsappLink} 
