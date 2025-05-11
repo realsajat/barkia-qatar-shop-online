@@ -12,11 +12,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/public/lovable-uploads/a0ec216d-dd84-4858-84bf-633bfd31d33c.png" 
+                src="/lovable-uploads/green-white-logo.png" 
                 alt="Al Arabia Qarpets Logo" 
                 className="h-12 w-12 mr-3" 
               />
-              <h3 className="font-playfair text-xl font-bold">Al Arabia Qarpets</h3>
+              <h3 className="font-playfair text-xl font-bold">Al Arabia Carpets</h3>
             </div>
             <p className="font-poppins text-sm mb-4">
               Premium home furnishing solutions in Qatar. We offer Barkia, PVC barkia, carpets, 
@@ -59,7 +59,7 @@ export default function Footer() {
               
               <div className="flex items-start space-x-2 font-poppins text-sm">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>Doha, Qatar</span>
+                <span>Al Mansoura St, Doha, Qatar</span>
               </div>
             </div>
           </div>

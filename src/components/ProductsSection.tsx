@@ -10,25 +10,25 @@ export default function ProductsSection() {
     {
       name: "Premium Barkia",
       description: "High-quality Barkia panels for elegant room separation and decoration.",
-      imageSrc: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=800&auto=format&fit=crop",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Premium%20Barkia"
+      imageSrc: "/barkia.png",
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Premium%20Barkia"
     },
     {
       name: "Luxury Carpets",
       description: "Soft, durable carpets that add comfort and style to any room.",
-      imageSrc: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800&auto=format&fit=crop",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Luxury%20Carpets"
+      imageSrc: "carpet.png",
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
     },
     {
       name: "Modern Majlis Sofas",
       description: "Contemporary majlis sofas that blend tradition and modern comfort.",
-      imageSrc: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=800&auto=format&fit=crop",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Modern%20Majlis%20Sofas"
+      imageSrc: "majlis-sofa.png",
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Majlis%20Sofas"
     },
   ];
 
   return (
-    <section className="py-16 bg-secondary">
+    <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Our Featured Products</h2>

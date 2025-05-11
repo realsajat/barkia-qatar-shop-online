@@ -65,11 +65,11 @@ export default function Navbar() {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <img 
-            src="/public/lovable-uploads/27cc3b08-4889-48d9-8c94-37e93eda66bc.png" 
+            src="/lovable-uploads/tran-golden-logo.png" 
             alt="Al Arabia Qarpets Logo" 
             className="h-12 w-12 object-contain drop-shadow-lg"
           />
-          <span className="font-playfair text-xl font-bold hidden sm:inline-block">Al Arabia Qarpets</span>
+          <span className="font-playfair text-xl font-bold hidden sm:inline-block">Al Arabia Carpets</span>
         </Link>
         
         {/* Desktop Navigation */}
@@ -78,7 +78,7 @@ export default function Navbar() {
             <button 
               onClick={() => scrollToSection('home')} 
               className={`flex items-center space-x-1 font-poppins transition-colors ${
-                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
               }`}
             >
               <Home size={16} />
@@ -88,7 +88,7 @@ export default function Navbar() {
             <Link
               to="/"
               className={`flex items-center space-x-1 font-poppins transition-colors ${
-                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+                isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
               }`}
             >
               <Home size={16} />
@@ -99,7 +99,7 @@ export default function Navbar() {
           <Link 
             to="/products" 
             className={`flex items-center space-x-1 font-poppins transition-colors ${
-              isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+              isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
             }`}
           >
             <ShoppingCart size={16} />
@@ -109,7 +109,7 @@ export default function Navbar() {
           <Link
             to="/about"
             className={`flex items-center space-x-1 font-poppins transition-colors ${
-              isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+              isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
             }`}
           >
             <Info size={16} />
@@ -144,7 +144,7 @@ export default function Navbar() {
               <button 
                 onClick={() => scrollToSection('home')}
                 className={`flex items-center space-x-2 font-poppins py-2 ${
-                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
                 }`}
               >
                 <Home size={16} />
@@ -154,7 +154,7 @@ export default function Navbar() {
               <Link 
                 to="/"
                 className={`flex items-center space-x-2 font-poppins py-2 ${
-                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+                  isActive('home') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -166,7 +166,7 @@ export default function Navbar() {
             <Link 
               to="/products"
               className={`flex items-center space-x-2 font-poppins py-2 ${
-                isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+                isActive('products') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -177,7 +177,7 @@ export default function Navbar() {
             <Link
               to="/about"
               className={`flex items-center space-x-2 font-poppins py-2 ${
-                isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-accent-DEFAULT/70'
+                isActive('about') ? 'text-accent-DEFAULT font-semibold' : 'hover:text-green-600'
               }`}
               onClick={() => setIsOpen(false)}
             >

@@ -24,58 +24,58 @@ const Products = () => {
     {
       name: "Premium Barkia",
       description: "High-quality Barkia panels for elegant room separation and decoration.",
-      imageSrc: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "barkia.png",
       category: "barkia",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Premium%20Barkia"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Premium%20Barkia"
     },
     {
       name: "PVC Barkia",
       description: "Durable and water-resistant PVC Barkia perfect for high-moisture areas.",
-      imageSrc: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "pvc-barkia.png",
       category: "barkia",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20PVC%20Barkia"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20PVC%20Barkia"
     },
     {
       name: "Luxury Carpets",
       description: "Soft, durable carpets that add comfort and style to any room.",
-      imageSrc: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "carpet.png",
       category: "carpet",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Luxury%20Carpets"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
     },
     {
       name: "Grass Carpet",
       description: "Natural-looking grass carpets ideal for outdoor areas and balconies.",
-      imageSrc: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "grass-carpet.png",
       category: "carpet",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Grass%20Carpet"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Grass%20Carpet"
     },
     {
       name: "Roller Blinds",
       description: "Modern roller blinds providing privacy and light control.",
-      imageSrc: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "roller.png",
       category: "curtains",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Roller%20Blinds"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Roller%20Blinds"
     },
     {
       name: "Elegant Curtains",
       description: "Beautiful curtains to enhance the ambiance of your living spaces.",
-      imageSrc: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "curtain.png",
       category: "curtains",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Elegant%20Curtains"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Elegant%20Curtains"
     },
     {
       name: "Modern Sofas",
       description: "Contemporary sofas designed for comfort and style.",
-      imageSrc: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "sofa.png",
       category: "furniture",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Modern%20Sofas"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Sofas"
     },
     {
       name: "Majlis Sets",
       description: "Traditional yet modern majlis sets perfect for Qatari homes.",
-      imageSrc: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800&auto=format&fit=crop",
+      imageSrc: "majlis-sofa.png",
       category: "furniture",
-      whatsappLink: "https://wa.me/+97400000000?text=I'm%20interested%20in%20Majlis%20Sets"
+      whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Majlis%20Sets"
     },
   ];
 
@@ -159,7 +159,7 @@ const Products = () => {
               className="bg-green-600 hover:bg-green-700 text-white"
             >
               <a 
-                href="https://wa.me/+97400000000" 
+                href="https://wa.me/+97455512858" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2"

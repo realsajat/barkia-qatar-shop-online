@@ -56,7 +56,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="text-center lg:text-left">
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Transform Your Living Space with Al Arabia Qarpets
+              Transform Your Living Space with Al Arabia Carpets
             </h1>
             <p className="font-poppins text-lg mb-8 text-white/80 max-w-xl mx-auto lg:mx-0">
               Premium home furnishings with free installation and delivery throughout Qatar. 
@@ -85,7 +85,7 @@ export default function HeroSection() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 text-green-950"
                 >
                   Contact Us
                 </motion.div>
@@ -137,7 +137,7 @@ export default function HeroSection() {
                         className="absolute inset-0 flex items-center justify-center"
                       >
                         <img 
-                          src="/public/lovable-uploads/27cc3b08-4889-48d9-8c94-37e93eda66bc.png" 
+                          src="/lovable-uploads/tran-golden-logo.png" 
                           alt="Al Arabia Qarpets Logo" 
                           className="w-full h-full object-contain drop-shadow-xl transition-all duration-300"
                         />

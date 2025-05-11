@@ -12,7 +12,7 @@ const About = () => {
         {/* Hero Banner */}
         <div className="bg-primary text-white py-12">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="font-playfair text-3xl md:text-4xl font-bold mb-4">About Barkia Qatar</h1>
+            <h1 className="font-playfair text-3xl md:text-4xl font-bold mb-4">About Al Arabia Carpets</h1>
             <p className="font-poppins max-w-2xl mx-auto">
               Learn more about our company and commitment to quality home furnishings in Qatar.
             </p>
@@ -26,7 +26,7 @@ const About = () => {
               <div className="order-2 lg:order-1">
                 <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-6">Our Story</h2>
                 <p className="font-poppins mb-4">
-                  Barkia Qatar was founded with a vision to bring premium home furnishing solutions to Qatar. 
+                Al Arabia Carpets was founded with a vision to bring premium home furnishing solutions to Qatar. 
                   We specialize in providing high-quality products including Barkia, PVC barkia, carpets, rollers, 
                   sofas, majlis sets, curtains, and grass carpets.
                 </p>
@@ -43,9 +43,9 @@ const About = () => {
                 <div className="relative w-64 h-64 md:w-80 md:h-80">
                   <div className="absolute inset-0 rounded-full overflow-hidden bg-secondary flex items-center justify-center p-8">
                     <img 
-                      src="/public/lovable-uploads/a0ec216d-dd84-4858-84bf-633bfd31d33c.png" 
-                      alt="Barkia Qatar Logo" 
-                      className="max-w-full max-h-full object-contain"
+                      src="/About Al Arabia Carpets.svg" 
+                      alt="Al Arabia Carpets shopfront" 
+                      className="max-w-full max-h-full object-cover"
                     />
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const About = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-4">Why Choose Barkia Qatar</h2>
+              <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-4">Why Choose Al Arabia Carpets</h2>
               <p className="font-poppins max-w-2xl mx-auto">
                 Discover what makes our products and services stand out in Qatar.
               </p>
@@ -139,7 +139,7 @@ const About = () => {
               Contact us today to discuss your home furnishing needs and discover how we can help.
             </p>
             <a 
-              href="https://wa.me/+97400000000" 
+              href="https://wa.me/+97455512858" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-white text-primary rounded-md hover:bg-white/90 transition-colors font-poppins font-medium"
