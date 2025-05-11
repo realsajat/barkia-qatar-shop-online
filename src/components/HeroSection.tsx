@@ -80,7 +80,7 @@ export default function HeroSection() {
                 onClick={() => scrollToSection('contact')}
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="border-white border-2 text-white hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
