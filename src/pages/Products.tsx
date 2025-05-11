@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,9 +7,11 @@ import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const navigate = useNavigate();
 
   // Categories with their products
   const categories = {
@@ -22,59 +25,75 @@ const Products = () => {
   // Sample products with their categories
   const allProducts = [
     {
+      id: "premium-barkia",
       name: "Premium Barkia",
       description: "High-quality Barkia panels for elegant room separation and decoration.",
       imageSrc: "barkia.png",
       category: "barkia",
+      price: "Starting from 350 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Premium%20Barkia"
     },
     {
+      id: "pvc-barkia",
       name: "PVC Barkia",
       description: "Durable and water-resistant PVC Barkia perfect for high-moisture areas.",
       imageSrc: "pvc-barkia.png",
       category: "barkia",
+      price: "Starting from 250 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20PVC%20Barkia"
     },
     {
+      id: "luxury-carpets",
       name: "Luxury Carpets",
       description: "Soft, durable carpets that add comfort and style to any room.",
       imageSrc: "carpet.png",
       category: "carpet",
+      price: "Starting from 120 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
     },
     {
+      id: "grass-carpet",
       name: "Grass Carpet",
       description: "Natural-looking grass carpets ideal for outdoor areas and balconies.",
       imageSrc: "grass-carpet.png",
       category: "carpet",
+      price: "Starting from 80 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Grass%20Carpet"
     },
     {
+      id: "roller-blinds",
       name: "Roller Blinds",
       description: "Modern roller blinds providing privacy and light control.",
       imageSrc: "roller.png",
       category: "curtains",
+      price: "Starting from 180 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Roller%20Blinds"
     },
     {
+      id: "elegant-curtains",
       name: "Elegant Curtains",
       description: "Beautiful curtains to enhance the ambiance of your living spaces.",
       imageSrc: "curtain.png",
       category: "curtains",
+      price: "Starting from 150 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Elegant%20Curtains"
     },
     {
+      id: "modern-sofas",
       name: "Modern Sofas",
       description: "Contemporary sofas designed for comfort and style.",
       imageSrc: "sofa.png",
       category: "furniture",
+      price: "Starting from 1800 QAR",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Sofas"
     },
     {
+      id: "majlis-sets",
       name: "Majlis Sets",
       description: "Traditional yet modern majlis sets perfect for Qatari homes.",
       imageSrc: "majlis-sofa.png",
       category: "furniture",
+      price: "Starting from 4500 QAR",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Majlis%20Sets"
     },
   ];
@@ -83,6 +102,11 @@ const Products = () => {
   const filteredProducts = activeCategory === "all" 
     ? allProducts 
     : allProducts.filter(product => product.category === activeCategory);
+
+  // Handler for product card click
+  const handleProductClick = (productId: string) => {
+    navigate(`/products/${productId}`);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -102,15 +126,15 @@ const Products = () => {
         {/* Products Section */}
         <section className="py-12 bg-secondary">
           <div className="container mx-auto px-4">
-            {/* Category Tabs */}
+            {/* Category Tabs - Fixed mobile view */}
             <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="mb-8">
               <div className="flex justify-center">
-                <TabsList className="bg-white p-1">
+                <TabsList className="bg-white p-1 overflow-x-auto flex-wrap justify-center">
                   {Object.entries(categories).map(([key, { label }]) => (
                     <TabsTrigger 
                       key={key} 
                       value={key}
-                      className="data-[state=active]:bg-primary data-[state=active]:text-white"
+                      className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-bold"
                     >
                       {label}
                     </TabsTrigger>
@@ -129,6 +153,7 @@ const Products = () => {
                     description={product.description}
                     imageSrc={product.imageSrc}
                     whatsappLink={product.whatsappLink}
+                    onClick={() => handleProductClick(product.id)}
                   />
                 ))}
               </div>

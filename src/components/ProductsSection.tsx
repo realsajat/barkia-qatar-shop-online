@@ -8,18 +8,21 @@ export default function ProductsSection() {
   // Sample products
   const featuredProducts = [
     {
+      id: "premium-barkia",
       name: "Premium Barkia",
       description: "High-quality Barkia panels for elegant room separation and decoration.",
       imageSrc: "/barkia.png",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Premium%20Barkia"
     },
     {
+      id: "luxury-carpets",
       name: "Luxury Carpets",
       description: "Soft, durable carpets that add comfort and style to any room.",
       imageSrc: "carpet.png",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
     },
     {
+      id: "majlis-sets",
       name: "Modern Majlis Sofas",
       description: "Contemporary majlis sofas that blend tradition and modern comfort.",
       imageSrc: "majlis-sofa.png",
@@ -46,6 +49,7 @@ export default function ProductsSection() {
               description={product.description}
               imageSrc={product.imageSrc}
               whatsappLink={product.whatsappLink}
+              onClick={() => window.location.href = `/products/${product.id}`}
             />
           ))}
         </div>

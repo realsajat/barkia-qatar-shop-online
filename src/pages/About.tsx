@@ -41,11 +41,11 @@ const About = () => {
               </div>
               <div className="order-1 lg:order-2 flex justify-center">
                 <div className="relative w-64 h-64 md:w-80 md:h-80">
-                  <div className="absolute inset-0 rounded-full overflow-hidden bg-secondary flex items-center justify-center p-8">
+                  <div className="absolute inset-0 rounded-full overflow-hidden bg-secondary flex items-center justify-center">
                     <img 
                       src="/About Al Arabia Carpets.svg" 
                       alt="Al Arabia Carpets shopfront" 
-                      className="max-w-full max-h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
