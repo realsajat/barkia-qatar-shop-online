@@ -173,28 +173,28 @@ const Products = () => {
               <div className="mb-8 flex justify-center">
                 <Drawer>
                   <DrawerTrigger asChild>
-                    <Button variant="outline" className="flex items-center gap-2">
+                    <Button variant="outline" className="flex items-center gap-2 border border-primary/30 shadow-sm">
                       <Filter size={18} />
-                      <span>Filter Products ({categories[activeCategory].label})</span>
+                      <span>Filter: {categories[activeCategory].label}</span>
                     </Button>
                   </DrawerTrigger>
-                  <DrawerContent>
-                    <DrawerHeader>
-                      <DrawerTitle className="text-center">Filter Products</DrawerTitle>
+                  <DrawerContent className="bg-[#F1F0FB]">
+                    <DrawerHeader className="pb-2">
+                      <DrawerTitle className="text-center text-xl font-bold text-[#403E43]">Select Category</DrawerTitle>
                     </DrawerHeader>
-                    <div className="px-4 pb-4">
+                    <div className="px-6 pb-6">
                       <Tabs 
                         defaultValue="all" 
                         value={activeCategory} 
                         onValueChange={handleCategoryChange} 
                         className="w-full"
                       >
-                        <TabsList className="flex flex-col gap-2 w-full">
+                        <TabsList className="flex flex-col gap-3 w-full bg-transparent">
                           {Object.entries(categories).map(([key, { label }]) => (
                             <TabsTrigger 
                               key={key} 
                               value={key}
-                              className="w-full justify-center py-3 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-bold"
+                              className="w-full justify-center py-3.5 text-base font-medium data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:shadow-md transition-all duration-200 border border-transparent data-[state=active]:border-primary/30 rounded-md"
                             >
                               {label}
                             </TabsTrigger>
@@ -202,9 +202,9 @@ const Products = () => {
                         </TabsList>
                       </Tabs>
                     </div>
-                    <DrawerFooter>
+                    <DrawerFooter className="pt-0">
                       <DrawerClose asChild>
-                        <Button variant="outline">Close</Button>
+                        <Button className="w-full bg-primary hover:bg-primary/90">Apply Filter</Button>
                       </DrawerClose>
                     </DrawerFooter>
                   </DrawerContent>
