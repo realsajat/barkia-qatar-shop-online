@@ -69,7 +69,7 @@ export default function Navbar() {
             alt="Al Arabia Qarpets Logo" 
             className="h-12 w-12 object-contain"
           />
-          <span className="font-playfair text-xl font-bold hidden sm:inline-block">Al Arabia Carpets</span>
+          <span className="font-playfair text-xl font-bold sm:inline-block">Al Arabia Carpets</span>
         </Link>
         
         {/* Desktop Navigation */}
