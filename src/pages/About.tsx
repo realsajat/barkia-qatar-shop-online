@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsappButton from "@/components/WhatsappButton";
 import { Card } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const About = () => {
   return (
@@ -41,12 +42,14 @@ const About = () => {
               </div>
               <div className="order-1 lg:order-2 flex justify-center">
                 <div className="relative w-64 h-64 md:w-80 md:h-80">
-                  <div className="absolute inset-0 rounded-full overflow-hidden bg-secondary flex items-center justify-center">
-                    <img 
-                      src="/About Al Arabia Carpets.svg" 
-                      alt="Al Arabia Carpets shopfront" 
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="absolute inset-0 rounded-full overflow-hidden bg-secondary">
+                    <AspectRatio ratio={1/1} className="w-full h-full">
+                      <img 
+                        src="/About Al Arabia Carpets.svg" 
+                        alt="Al Arabia Carpets shopfront" 
+                        className="w-full h-full object-cover"
+                      />
+                    </AspectRatio>
                   </div>
                 </div>
               </div>

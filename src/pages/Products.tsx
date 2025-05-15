@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -159,9 +160,12 @@ const Products = () => {
               <div className="mb-8 flex justify-center">
                 <Drawer>
                   <DrawerTrigger asChild>
-                    <Button variant="outline" className="flex items-center gap-2 border border-primary/30 shadow-sm">
-                      <Filter size={18} />
-                      <span>Filter: {categories[activeCategory].label}</span>
+                    <Button 
+                      variant="outline" 
+                      className="flex items-center gap-2 border border-primary/50 shadow-md bg-white py-3 px-4"
+                    >
+                      <Filter size={18} className="text-primary" />
+                      <span className="font-medium text-base">{categories[activeCategory].label}</span>
                     </Button>
                   </DrawerTrigger>
                   <DrawerContent className="bg-[#F1F0FB] px-4 max-w-full overflow-x-hidden max-h-[90vh]">
@@ -177,7 +181,7 @@ const Products = () => {
                         onValueChange={setActiveCategory}
                         className="w-full"
                       >
-                        <TabsList className="flex flex-col gap-3 w-full bg-transparent">
+                        <div className="flex flex-col gap-3 w-full bg-transparent">
                           {Object.entries(categories).map(([key, { label }]) => (
                             <TabsTrigger
                               key={key}
@@ -187,12 +191,12 @@ const Products = () => {
                               {label}
                             </TabsTrigger>
                           ))}
-                        </TabsList>
+                        </div>
                       </Tabs>
                     </div>
                     <DrawerFooter className="pt-0">
                       <DrawerClose asChild>
-                        <Button className="w-full bg-primary hover:bg-primary/90">Apply Filter</Button>
+                        <Button className="w-full bg-primary hover:bg-primary/90 text-lg py-6">Apply Filter</Button>
                       </DrawerClose>
                     </DrawerFooter>
                   </DrawerContent>

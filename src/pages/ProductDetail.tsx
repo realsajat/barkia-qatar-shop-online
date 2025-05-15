@@ -98,6 +98,15 @@ const ProductDetail = () => {
         price: "Starting from 4500 QAR",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Majlis%20Sets"
       },
+      {
+        id: "luxury-interior-design",
+        name: "Luxury Interior Design",
+        description: "Complete interior design service tailored to your preferences and lifestyle. Our expert designers work closely with you to create bespoke interiors that reflect your personality and enhance your living experience. From concept to completion, we handle every aspect of the design process.",
+        imageSrc: "/interior.png",
+        category: "interior",
+        price: "Starting from 10000 QAR",
+        whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Interior%20Design%20Services"
+      }
     ];
 
     setTimeout(() => {
