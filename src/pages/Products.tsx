@@ -14,10 +14,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [dialogOpen, setDialogOpen] = useState(false);
   const navigate = useNavigate();
   const isMobile = useIsMobile();
 
@@ -123,6 +125,11 @@ const Products = () => {
     navigate(`/products/${productId}`);
   };
 
+  const handleCategorySelect = (category: string) => {
+    setActiveCategory(category);
+    setDialogOpen(false);
+  };
+
   const renderCategoryTabs = () => (
     <TabsList className="bg-white p-1 w-full justify-center">
       {Object.entries(categories).map(([key, { label }]) => (
@@ -155,7 +162,7 @@ const Products = () => {
           <div className="container mx-auto px-4">
             {isMobile ? (
               <div className="mb-8 flex justify-center">
-                <Dialog>
+                <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                   <DialogTrigger asChild>
                     <Button 
                       variant="outline" 
@@ -166,38 +173,29 @@ const Products = () => {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="bg-white p-0 max-w-[95%] rounded-xl border-2 border-accent/20 shadow-lg">
-                    <DialogHeader className="border-b border-gray-100 py-4">
+                    <DialogHeader className="border-b border-accent/10 py-4 bg-secondary/50">
                       <DialogTitle className="text-center text-xl font-bold text-primary">
                         Choose Category
                       </DialogTitle>
                     </DialogHeader>
-                    <div className="p-4">
-                      <Tabs
-                        defaultValue="all"
-                        value={activeCategory}
-                        onValueChange={(value) => {
-                          setActiveCategory(value);
-                        }}
-                        className="w-full"
-                      >
-                        <div className="grid grid-cols-2 gap-2">
-                          {Object.entries(categories).map(([key, { label }]) => (
-                            <Button
-                              key={key}
-                              variant={activeCategory === key ? "default" : "outline"}
-                              className={`w-full justify-center py-3 text-sm font-medium 
-                                ${activeCategory === key 
-                                  ? "bg-accent text-white shadow-md" 
-                                  : "bg-white text-primary hover:bg-secondary/50"
-                                } 
-                                border rounded-lg transition-all`}
-                              onClick={() => setActiveCategory(key)}
-                            >
-                              {label}
-                            </Button>
-                          ))}
-                        </div>
-                      </Tabs>
+                    <div className="p-6">
+                      <div className="grid grid-cols-2 gap-3">
+                        {Object.entries(categories).map(([key, { label }]) => (
+                          <Button
+                            key={key}
+                            variant={activeCategory === key ? "default" : "outline"}
+                            className={`w-full justify-center py-3 text-sm font-medium transition-all
+                              ${activeCategory === key 
+                                ? "bg-primary hover:bg-accent text-white shadow-md" 
+                                : "bg-white text-primary hover:bg-secondary border-accent/20 hover:border-accent/40"
+                              } 
+                              border rounded-lg`}
+                            onClick={() => handleCategorySelect(key)}
+                          >
+                            {label}
+                          </Button>
+                        ))}
+                      </div>
                     </div>
                   </DialogContent>
                 </Dialog>
