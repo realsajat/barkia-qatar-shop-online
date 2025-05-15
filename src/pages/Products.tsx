@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,14 +9,12 @@ import { Filter, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
-  Drawer,
-  DrawerTrigger,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerFooter,
-  DrawerClose
-} from "@/components/ui/drawer";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -158,8 +155,8 @@ const Products = () => {
           <div className="container mx-auto px-4">
             {isMobile ? (
               <div className="mb-8 flex justify-center">
-                <Drawer>
-                  <DrawerTrigger asChild>
+                <Dialog>
+                  <DialogTrigger asChild>
                     <Button 
                       variant="outline" 
                       className="flex items-center gap-2.5 border border-primary/30 shadow-md bg-white py-3.5 px-5 rounded-xl"
@@ -167,47 +164,43 @@ const Products = () => {
                       <Filter size={18} className="text-accent" />
                       <span className="font-medium text-base text-primary">{categories[activeCategory].label}</span>
                     </Button>
-                  </DrawerTrigger>
-                  <DrawerContent className="bg-gradient-to-b from-white to-secondary px-4 max-w-full overflow-x-hidden max-h-[90vh] border-t-4 border-accent rounded-t-2xl">
-                    <DrawerHeader className="pb-1">
-                      <DrawerTitle className="text-center text-xl font-bold text-primary">
-                        Choose Product Category
-                      </DrawerTitle>
-                    </DrawerHeader>
-                    <div className="px-2 pb-4 max-h-[65vh] overflow-y-auto">
+                  </DialogTrigger>
+                  <DialogContent className="bg-white p-0 max-w-[95%] rounded-xl border-2 border-accent/20 shadow-lg">
+                    <DialogHeader className="border-b border-gray-100 py-4">
+                      <DialogTitle className="text-center text-xl font-bold text-primary">
+                        Choose Category
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="p-4">
                       <Tabs
                         defaultValue="all"
                         value={activeCategory}
-                        onValueChange={setActiveCategory}
+                        onValueChange={(value) => {
+                          setActiveCategory(value);
+                        }}
                         className="w-full"
                       >
-                        <TabsList className="flex flex-col gap-3 w-full bg-transparent">
+                        <div className="grid grid-cols-2 gap-2">
                           {Object.entries(categories).map(([key, { label }]) => (
-                            <TabsTrigger
+                            <Button
                               key={key}
-                              value={key}
-                              className="w-full justify-center py-4 text-base font-medium 
-                              data-[state=active]:bg-accent data-[state=active]:text-white 
-                              data-[state=active]:font-bold data-[state=active]:shadow-lg 
-                              transition-all duration-200 border border-transparent 
-                              data-[state=active]:border-accent/30 rounded-xl
-                              hover:bg-secondary/80 hover:shadow-md"
+                              variant={activeCategory === key ? "default" : "outline"}
+                              className={`w-full justify-center py-3 text-sm font-medium 
+                                ${activeCategory === key 
+                                  ? "bg-accent text-white shadow-md" 
+                                  : "bg-white text-primary hover:bg-secondary/50"
+                                } 
+                                border rounded-lg transition-all`}
+                              onClick={() => setActiveCategory(key)}
                             >
                               {label}
-                            </TabsTrigger>
+                            </Button>
                           ))}
-                        </TabsList>
+                        </div>
                       </Tabs>
                     </div>
-                    <DrawerFooter className="pt-1 pb-6">
-                      <DrawerClose asChild>
-                        <Button className="w-full bg-primary hover:bg-primary/90 text-white text-lg py-6 rounded-xl shadow-md">
-                          Apply Filter
-                        </Button>
-                      </DrawerClose>
-                    </DrawerFooter>
-                  </DrawerContent>
-                </Drawer>
+                  </DialogContent>
+                </Dialog>
               </div>
             ) : (
               <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="mb-8">
