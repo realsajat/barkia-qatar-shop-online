@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -181,7 +180,7 @@ const Products = () => {
                         onValueChange={setActiveCategory}
                         className="w-full"
                       >
-                        <div className="flex flex-col gap-3 w-full bg-transparent">
+                        <TabsList className="flex flex-col gap-3 w-full bg-transparent">
                           {Object.entries(categories).map(([key, { label }]) => (
                             <TabsTrigger
                               key={key}
@@ -191,7 +190,7 @@ const Products = () => {
                               {label}
                             </TabsTrigger>
                           ))}
-                        </div>
+                        </TabsList>
                       </Tabs>
                     </div>
                     <DrawerFooter className="pt-0">
