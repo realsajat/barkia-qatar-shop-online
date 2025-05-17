@@ -1,5 +1,5 @@
 
-import { Phone } from "lucide-react";
+import { Whatsapp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function WhatsappButton() {
@@ -16,7 +16,7 @@ export default function WhatsappButton() {
           rel="noopener noreferrer"
           aria-label="Contact us on WhatsApp"
         >
-          <Phone size={24} />
+          <Whatsapp size={24} />
         </a>
       </Button>
     </div>

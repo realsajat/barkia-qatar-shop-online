@@ -1,9 +1,23 @@
 
-import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import { Whatsapp, Mail, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // If we're on the homepage, scroll to the contact section
+    if (location.pathname === "/") {
+      document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+    } else {
+      // If we're on another page, navigate to homepage and then scroll to contact
+      window.location.href = '/#contact';
+    }
+  };
   
   return (
     <footer className="bg-primary text-white pt-12 pb-6" id="footer">
@@ -13,7 +27,7 @@ export default function Footer() {
             <div className="flex items-center mb-4">
               <img 
                 src="/lovable-uploads/green-white-logo.png" 
-                alt="Al Arabia Qarpets Logo" 
+                alt="Al Arabia Carpets Logo" 
                 className="h-12 w-12 mr-3" 
               />
               <h3 className="font-playfair text-xl font-bold">Al Arabia Carpets</h3>
@@ -31,11 +45,8 @@ export default function Footer() {
               <Link to="/products" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Products</Link>
               <Link to="/about" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">About Us</Link>
               <a 
-                href="#contact" 
-                onClick={(e) => {
-                  e.preventDefault(); 
-                  document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})
-                }} 
+                href="/#contact" 
+                onClick={scrollToContact} 
                 className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors"
               >
                 Contact Us
@@ -52,7 +63,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 font-poppins text-sm hover:text-accent-DEFAULT transition-colors"
               >
-                <Phone size={16} />
+                <Whatsapp size={16} />
                 <span>WhatsApp: +974 5551 2858</span>
                 <ExternalLink size={14} />
               </a>
@@ -66,7 +77,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-white/10 pt-6 text-center">
-          <p className="font-poppins text-sm">&copy; {currentYear} Al Arabia Qarpets. All rights reserved.</p>
+          <p className="font-poppins text-sm">&copy; {currentYear} Al Arabia Carpets. All rights reserved.</p>
         </div>
       </div>
     </footer>
