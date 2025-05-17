@@ -1,5 +1,5 @@
 
-import { Whatsapp } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function WhatsappButton() {
@@ -16,7 +16,7 @@ export default function WhatsappButton() {
           rel="noopener noreferrer"
           aria-label="Contact us on WhatsApp"
         >
-          <Whatsapp size={24} />
+          <MessageCircle size={24} />
         </a>
       </Button>
     </div>

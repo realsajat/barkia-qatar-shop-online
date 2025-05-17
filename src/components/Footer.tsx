@@ -1,5 +1,5 @@
 
-import { Whatsapp, Mail, MapPin, ExternalLink } from "lucide-react";
+import { MessageCircle, Mail, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -63,7 +63,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 font-poppins text-sm hover:text-accent-DEFAULT transition-colors"
               >
-                <Whatsapp size={16} />
+                <MessageCircle size={16} />
                 <span>WhatsApp: +974 5551 2858</span>
                 <ExternalLink size={14} />
               </a>
