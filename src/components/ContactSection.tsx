@@ -1,7 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Phone, MapPin, Facebook, Instagram, Send } from "lucide-react";
+import { ExternalLink, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -32,8 +31,8 @@ export default function ContactSection() {
       .then(() => {
         setSubmitted(true);
         toast({
-          title: "Message sent successfully!",
-          description: `Thank you ${name}, we'll get back to you soon.`,
+          title: "Form submitted!",
+          description: `Thank you ${name}, we will contact you soon.`,
         });
         setName("");
         setEmail("");
@@ -51,219 +50,188 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 to-white">
+    <section id="contact" className="py-20 bg-primary text-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Get in Touch
-          </h2>
-          <p className="font-poppins text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your space? Let's discuss your project and bring your vision to life.
+        <div className="text-center mb-12">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+          <p className="font-poppins max-w-2xl mx-auto">
+            Have questions or ready to transform your space? Reach out to us.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Contact Information Card */}
-          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Left Contact Card */}
+          <Card className="bg-white text-primary">
             <CardContent className="p-8">
-              <div className="mb-8">
-                <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-3">
-                  Contact Information
-                </h3>
-                <p className="font-poppins text-gray-600 leading-relaxed">
-                  Our team is here to help you with any questions about our premium products and services.
+              <div className="text-center mb-6">
+                <h3 className="font-playfair text-2xl font-semibold mb-2">Get in Touch</h3>
+                <p className="font-poppins text-muted-foreground">
+                  Our team is ready to assist you with any questions about our products and services.
                 </p>
               </div>
-
-              <div className="space-y-6">
-                {/* WhatsApp */}
-                <div className="flex items-center gap-4 group/item">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center group-hover/item:bg-green-200 transition-colors">
-                    <Phone size={20} className="text-green-600" />
+              <div className="space-y-4">
+                {/* Phone */}
+                <div className="flex items-center gap-3">
+                  <div className="bg-primary/10 p-2 rounded-full">
+                    <Phone size={20} className="text-primary" />
                   </div>
                   <div>
-                    <p className="font-poppins font-medium text-gray-900">WhatsApp</p>
-                    <p className="font-poppins text-gray-600">+974 5551 2858</p>
+                    <p className="font-poppins font-medium">WhatsApp</p>
+                    <p className="font-poppins text-sm text-muted-foreground">+974 5551 2858</p>
                   </div>
                 </div>
-
                 {/* Location */}
-                <div className="flex items-center gap-4 group/item">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center group-hover/item:bg-blue-200 transition-colors">
-                    <MapPin size={20} className="text-blue-600" />
+                <div className="flex items-center gap-3">
+                  <div className="bg-primary/10 p-2 rounded-full">
+                    <MapPin size={20} className="text-primary" />
                   </div>
                   <div>
-                    <p className="font-poppins font-medium text-gray-900">Visit Our Showroom</p>
-                    <p className="font-poppins text-gray-600">Al Mansoura St, Doha, Qatar</p>
+                    <p className="font-poppins font-medium">Location</p>
+                    <p className="font-poppins text-sm text-muted-foreground">Al Mansoura St, Doha, Qatar</p>
                   </div>
                 </div>
-
-                {/* Social Media */}
-                <div className="pt-4 border-t border-gray-100">
-                  <p className="font-poppins font-medium text-gray-900 mb-4">Follow Us</p>
-                  <div className="flex gap-4">
+                {/* Facebook */}
+                <div className="flex items-center gap-3">
+                  <div className="bg-primary/10 p-2 rounded-full">
+                    <Facebook size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-poppins font-medium">Facebook</p>
                     <a
                       href="https://facebook.com/alarabiacarpets"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-blue-100 hover:bg-blue-200 rounded-full flex items-center justify-center transition-colors"
+                      className="font-poppins text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Facebook size={18} className="text-blue-600" />
+                      facebook.com/alarabiacarpets
                     </a>
+                  </div>
+                </div>
+                {/* Instagram */}
+                <div className="flex items-center gap-3">
+                  <div className="bg-primary/10 p-2 rounded-full">
+                    <Instagram size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-poppins font-medium">Instagram</p>
                     <a
                       href="https://instagram.com/alarabiacarpet"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-pink-100 hover:bg-pink-200 rounded-full flex items-center justify-center transition-colors"
+                      className="font-poppins text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Instagram size={18} className="text-pink-600" />
+                      instagram.com/alarabiacarpet
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-6">
                 <Button
                   asChild
-                  className="w-full bg-green-600 hover:bg-green-700 text-white h-12 rounded-xl font-poppins font-medium text-base shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
                 >
                   <a
                     href="https://wa.me/+97455512858"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2"
+                    className="flex items-center justify-center space-x-2"
                   >
-                    <span>Start a Conversation</span>
-                    <ExternalLink size={18} />
+                    <span>Contact via WhatsApp</span>
+                    <ExternalLink size={16} />
                   </a>
                 </Button>
               </div>
             </CardContent>
           </Card>
 
-          {/* Message Form Card */}
-          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+          {/* Right Form */}
+          <Card className="bg-white text-primary overflow-hidden border-0 shadow-lg">
             <CardContent className="p-8">
+              <div className="bg-accent/5 py-5 px-8 border-b border-accent/10 text-center">
+                <h3 className="font-playfair text-2xl font-semibold">Helpdesk</h3>
+              </div>
               {!submitted ? (
-                <>
-                  <div className="mb-8">
-                    <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-3">
-                      Send us a Message
-                    </h3>
-                    <p className="font-poppins text-gray-600 leading-relaxed">
-                      Tell us about your project and we'll get back to you within 24 hours.
-                    </p>
+                <form
+                  name="helpdesk"
+                  method="POST"
+                  data-netlify="true"
+                  onSubmit={handleSubmit}
+                  className="space-y-4 pt-6"
+                >
+                  <input type="hidden" name="form-name" value="helpdesk" />
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-1 font-poppins">
+                      Name
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="Your Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                      className="bg-secondary/20 border-accent/20 focus-visible:ring-accent"
+                    />
                   </div>
-
-                  <form
-                    name="helpdesk"
-                    method="POST"
-                    data-netlify="true"
-                    onSubmit={handleSubmit}
-                    className="space-y-6"
-                  >
-                    <input type="hidden" name="form-name" value="helpdesk" />
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
-                          Your Name
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          placeholder="Enter your name"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          required
-                          className="h-12 border-gray-200 focus:border-primary focus:ring-primary/20 rounded-xl font-poppins"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
-                          Email Address
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          placeholder="your@email.com"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                          className="h-12 border-gray-200 focus:border-primary focus:ring-primary/20 rounded-xl font-poppins"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
-                        Message
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="Tell us about your project or ask any questions..."
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        required
-                        className="min-h-[120px] border-gray-200 focus:border-primary focus:ring-primary/20 rounded-xl font-poppins resize-none"
-                      />
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <Checkbox
-                        id="newsletter"
-                        name="newsletter"
-                        checked={newsletterSignup}
-                        onCheckedChange={(checked) => setNewsletterSignup(checked as boolean)}
-                        className="mt-1 data-[state=checked]:bg-primary border-gray-300"
-                      />
-                      <label
-                        htmlFor="newsletter"
-                        className="text-sm font-poppins text-gray-600 cursor-pointer leading-relaxed"
-                      >
-                        Subscribe to our newsletter for exclusive offers, design tips, and product updates
-                      </label>
-                    </div>
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-primary hover:bg-primary/90 text-white h-12 rounded-xl font-poppins font-medium text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-1 font-poppins">
+                      Email
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="bg-secondary/20 border-accent/20 focus-visible:ring-accent"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-1 font-poppins">
+                      Message
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="How can we help you?"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      required
+                      className="min-h-[120px] bg-secondary/20 border-accent/20 focus-visible:ring-accent"
+                    />
+                  </div>
+                  <div className="flex items-start space-x-2 pt-2">
+                    <Checkbox
+                      id="newsletter"
+                      name="newsletter"
+                      checked={newsletterSignup}
+                      onCheckedChange={(checked) => setNewsletterSignup(checked as boolean)}
+                      className="mt-1 data-[state=checked]:bg-accent border-accent/50"
+                    />
+                    <label
+                      htmlFor="newsletter"
+                      className="text-sm font-poppins text-muted-foreground cursor-pointer"
                     >
-                      {isSubmitting ? (
-                        <span className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          Sending...
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-2">
-                          <Send size={18} />
-                          Send Message
-                        </span>
-                      )}
-                    </Button>
-                  </form>
-                </>
+                      Subscribe to our newsletter for exclusive offers and updates
+                    </label>
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-accent hover:bg-accent/90 text-white transition-all duration-300 mt-2"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
               ) : (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Send size={24} className="text-green-600" />
-                  </div>
-                  <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-3">
-                    Message Sent Successfully!
-                  </h3>
-                  <p className="font-poppins text-gray-600 leading-relaxed">
-                    Thank you for reaching out. We'll review your message and get back to you within 24 hours.
+                  <h3 className="text-2xl font-bold text-accent">Thank you!</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Your message has been sent. We'll be in touch soon.
                   </p>
-                  <Button
-                    onClick={() => setSubmitted(false)}
-                    variant="outline"
-                    className="mt-6 font-poppins"
-                  >
-                    Send Another Message
-                  </Button>
                 </div>
               )}
             </CardContent>
