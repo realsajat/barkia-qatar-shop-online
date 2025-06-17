@@ -1,12 +1,11 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star, Award, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const [isLogoHovered, setIsLogoHovered] = useState(false);
-  const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 });
 
   const handleLogoMouseEnter = () => {
     setIsLogoHovered(true);
@@ -14,148 +13,162 @@ export default function HeroSection() {
 
   const handleLogoMouseLeave = () => {
     setIsLogoHovered(false);
-    setRotation({ x: 0, y: 0, z: 0 });
-  };
-
-  const handleLogoMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isLogoHovered) return;
-    
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    
-    // Enhanced rotation with z-axis
-    setRotation({ 
-      x: -(y / 20), 
-      y: x / 20,
-      z: (x + y) / 100
-    });
   };
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({behavior: 'smooth'});
   };
 
-  // Pulse animation effect
-  const [isPulsing, setIsPulsing] = useState(true);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsPulsing(prev => !prev);
-    }, 3000);
-    
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section id="home" className="relative bg-gradient-to-b from-primary via-primary to-primary/95 text-white pb-32 pt-20 lg:pt-24 overflow-hidden min-h-screen">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div>
+    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden min-h-screen">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
-      <div className="container mx-auto px-4 relative flex items-center min-h-screen">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
-          <div className="text-center lg:text-left">
-            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Transform Your Living Space with Al Arabia Carpets
-            </h1>
-            <p className="font-poppins text-lg mb-8 text-white/90 max-w-xl mx-auto lg:mx-0">
-              Premium home furnishings with free installation and delivery throughout Qatar. 
-              Enhance your space with our quality Barkia, carpets, sofas, and more.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                onClick={() => scrollToSection('products')}
-                size="lg" 
-                className="bg-white text-primary hover:bg-white/90 flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg font-poppins font-medium"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2"
-                >
-                  Explore Products <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </motion.div>
-              </Button>
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                size="lg" 
-                variant="outline" 
-                className="border-white border-2 text-white hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105 hover:shadow-lg font-poppins font-medium"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Contact Us
-                </motion.div>
-              </Button>
-            </div>
-          </div>
-          <div className="flex justify-center lg:justify-end">
-            <motion.div 
-              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 perspective-800"
-              onMouseEnter={handleLogoMouseEnter}
-              onMouseLeave={handleLogoMouseLeave}
-              onMouseMove={handleLogoMouseMove}
-              onClick={() => scrollToSection('products')}
-              whileHover={{ scale: 1.05 }}
-              animate={{ 
-                rotateY: isLogoHovered ? 0 : [0, 5, 0, -5, 0],
-                rotateX: isLogoHovered ? 0 : [0, 3, 0, -3, 0]
-              }}
-              transition={{ 
-                duration: 6, 
-                repeat: Infinity, 
-                repeatType: "loop",
-                ease: "easeInOut"
-              }}
-              style={{ 
-                cursor: 'pointer',
-                perspective: '1000px'
-              }}
-            >
+      
+      {/* Gradient Overlays */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative">
+        <div className="flex items-center min-h-screen py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+            
+            {/* Left Content */}
+            <div className="text-center lg:text-left space-y-8">
+              {/* Badge */}
               <motion.div 
-                className="absolute inset-0 flex items-center justify-center rounded-full p-4 transition-all duration-300"
-                style={{ 
-                  transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`,
-                  transition: isLogoHovered ? 'none' : 'transform 0.5s ease-out'
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium"
               >
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 blur-md transform -translate-z-10"></div>
-                  
-                  <div className={`absolute inset-0 rounded-full ${isPulsing ? 'animate-pulse' : ''}`}>
-                    <div className="w-full h-full relative">
-                      <motion.div
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        className="absolute inset-0 flex items-center justify-center"
-                      >
-                        <img 
-                          src="/lovable-uploads/tran-golden-logo.png" 
-                          alt="Al Arabia Qarpets Logo" 
-                          className="w-full h-full object-contain drop-shadow-xl transition-all duration-300"
-                        />
-                      </motion.div>
-                      
-                      <motion.div 
-                        className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent rounded-full"
-                        animate={{ 
-                          opacity: [0, 0.5, 0],
-                          rotateZ: [0, 360] 
-                        }}
-                        transition={{ 
-                          duration: 3,
-                          repeat: Infinity,
-                          repeatType: "loop",
-                          ease: "easeInOut"
-                        }}
-                      />
-                    </div>
-                  </div>
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                Premium Home Furnishings
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                  Transform Your
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
+                    Living Space
+                  </span>
+                </h1>
+              </motion.div>
+
+              {/* Description */}
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="font-poppins text-xl text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              >
+                Discover premium carpets, elegant sofas, and quality Barkia with free installation and delivery throughout Qatar.
+              </motion.p>
+
+              {/* Stats */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-wrap gap-8 justify-center lg:justify-start"
+              >
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium">Premium Quality</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium">1000+ Happy Customers</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                  <span className="text-sm font-medium">Free Installation</span>
                 </div>
               </motion.div>
-            </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
+              >
+                <Button 
+                  onClick={() => scrollToSection('products')}
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl font-poppins font-semibold group transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                >
+                  Explore Products 
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                </Button>
+                <Button 
+                  onClick={() => scrollToSection('contact')}
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-white/30 text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg rounded-xl font-poppins font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                >
+                  Get Quote
+                </Button>
+              </motion.div>
+            </div>
+
+            {/* Right Content - Logo */}
+            <div className="flex justify-center lg:justify-end">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem]"
+                onMouseEnter={handleLogoMouseEnter}
+                onMouseLeave={handleLogoMouseLeave}
+                onClick={() => scrollToSection('products')}
+                whileHover={{ scale: 1.05 }}
+                style={{ cursor: 'pointer' }}
+              >
+                {/* Glowing Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-2xl"></div>
+                
+                {/* Logo Container */}
+                <div className="relative w-full h-full flex items-center justify-center bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+                  <motion.img 
+                    src="/lovable-uploads/tran-golden-logo.png" 
+                    alt="Al Arabia Carpets Logo" 
+                    className="w-3/4 h-3/4 object-contain drop-shadow-2xl"
+                    animate={{ 
+                      rotateY: isLogoHovered ? 0 : [0, 10, 0, -10, 0],
+                    }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity, 
+                      repeatType: "loop",
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  {/* Rotating Ring */}
+                  <motion.div 
+                    className="absolute inset-0 border-2 border-primary/30 rounded-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ 
+                      duration: 20, 
+                      repeat: Infinity, 
+                      ease: "linear" 
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
