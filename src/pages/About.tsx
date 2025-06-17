@@ -68,21 +68,21 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-white p-6 text-center h-full">
+              <Card className="p-6 text-center h-full">
                 <h3 className="font-playfair text-xl font-semibold mb-3">Quality</h3>
                 <p className="font-poppins text-muted-foreground">
                   We never compromise on the quality of our products, sourcing only the best materials and designs.
                 </p>
               </Card>
               
-              <Card className="bg-white p-6 text-center h-full">
+              <Card className="p-6 text-center h-full">
                 <h3 className="font-playfair text-xl font-semibold mb-3">Customer Satisfaction</h3>
                 <p className="font-poppins text-muted-foreground">
                   Your satisfaction is our priority. We go the extra mile to ensure you're happy with your purchase.
                 </p>
               </Card>
               
-              <Card className="bg-white p-6 text-center h-full">
+              <Card className="p-6 text-center h-full">
                 <h3 className="font-playfair text-xl font-semibold mb-3">Excellence</h3>
                 <p className="font-poppins text-muted-foreground">
                   From product selection to installation, we strive for excellence in every aspect of our service.
@@ -103,33 +103,33 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 border border-border rounded-lg">
+              <Card className="p-6">
                 <h3 className="font-playfair text-xl font-semibold mb-3">Premium Products</h3>
                 <p className="font-poppins text-muted-foreground">
                   All our products are carefully selected for their quality, durability, and design appeal.
                 </p>
-              </div>
+              </Card>
               
-              <div className="bg-white p-6 border border-border rounded-lg">
+              <Card className="p-6">
                 <h3 className="font-playfair text-xl font-semibold mb-3">Free Services</h3>
                 <p className="font-poppins text-muted-foreground">
                   Enjoy free installation, delivery, and expert consultation with every purchase.
                 </p>
-              </div>
+              </Card>
               
-              <div className="bg-white p-6 border border-border rounded-lg">
+              <Card className="p-6">
                 <h3 className="font-playfair text-xl font-semibold mb-3">Wide Selection</h3>
                 <p className="font-poppins text-muted-foreground">
                   From Barkia to majlis sofas, we offer a comprehensive range of home furnishing solutions.
                 </p>
-              </div>
+              </Card>
               
-              <div className="bg-white p-6 border border-border rounded-lg">
+              <Card className="p-6">
                 <h3 className="font-playfair text-xl font-semibold mb-3">Customer Support</h3>
                 <p className="font-poppins text-muted-foreground">
                   Our responsive customer service team is always ready to assist you via WhatsApp.
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
         </section>
