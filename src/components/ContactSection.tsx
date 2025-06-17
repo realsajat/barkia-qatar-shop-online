@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Phone, MapPin, Facebook, Instagram, Mail, MessageCircle } from "lucide-react";
@@ -62,13 +63,13 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {/* Contact Information Card */}
-          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">
+          <Card className="bg-white/20 backdrop-blur-md border border-white/30 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-2 rounded-full">
                   <Phone size={18} className="text-white" />
                 </div>
-                <h3 className="font-playfair text-xl font-semibold text-gray-800">Get In Touch</h3>
+                <h3 className="font-playfair text-xl font-semibold text-white">Get In Touch</h3>
               </div>
               
               <div className="space-y-4">
@@ -77,31 +78,31 @@ export default function ContactSection() {
                   href="https://wa.me/+97455512858"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-colors group"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors group"
                 >
                   <div className="bg-green-500 p-2 rounded-full group-hover:scale-110 transition-transform">
                     <MessageCircle size={18} className="text-white" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-poppins font-medium text-gray-800">WhatsApp</p>
-                    <p className="font-poppins text-sm text-gray-600">+974 5551 2858</p>
+                    <p className="font-poppins font-medium text-white">WhatsApp</p>
+                    <p className="font-poppins text-sm text-white/70">+974 5551 2858</p>
                   </div>
-                  <ExternalLink size={16} className="text-gray-400" />
+                  <ExternalLink size={16} className="text-white/50" />
                 </a>
 
                 {/* Email */}
                 <a
                   href="mailto:info@alarabiacarpets.com"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors group"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors group"
                 >
                   <div className="bg-blue-500 p-2 rounded-full group-hover:scale-110 transition-transform">
                     <Mail size={18} className="text-white" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-poppins font-medium text-gray-800">Email</p>
-                    <p className="font-poppins text-sm text-gray-600">info@alarabiacarpets.com</p>
+                    <p className="font-poppins font-medium text-white">Email</p>
+                    <p className="font-poppins text-sm text-white/70">info@alarabiacarpets.com</p>
                   </div>
-                  <ExternalLink size={16} className="text-gray-400" />
+                  <ExternalLink size={16} className="text-white/50" />
                 </a>
 
                 {/* Location with Google Maps link */}
@@ -109,16 +110,16 @@ export default function ContactSection() {
                   href="https://maps.app.goo.gl/fmsyA8xgwo5qgu2H7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors group"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors group"
                 >
-                  <div className="bg-gray-500 p-2 rounded-full group-hover:scale-110 transition-transform">
+                  <div className="bg-accent p-2 rounded-full group-hover:scale-110 transition-transform">
                     <MapPin size={18} className="text-white" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-poppins font-medium text-gray-800">Location</p>
-                    <p className="font-poppins text-sm text-gray-600">Al Mansoura St, Doha, Qatar</p>
+                    <p className="font-poppins font-medium text-white">Location</p>
+                    <p className="font-poppins text-sm text-white/70">Al Mansoura St, Doha, Qatar</p>
                   </div>
-                  <ExternalLink size={16} className="text-gray-400" />
+                  <ExternalLink size={16} className="text-white/50" />
                 </a>
 
                 {/* Social Media */}
@@ -127,26 +128,26 @@ export default function ContactSection() {
                     href="https://facebook.com/alarabiacarpets"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 p-2 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors group"
+                    className="flex items-center gap-2 p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors group"
                   >
                     <div className="bg-blue-600 p-1.5 rounded-full group-hover:scale-110 transition-transform">
                       <Facebook size={16} className="text-white" />
                     </div>
-                    <span className="font-poppins text-sm font-medium text-gray-700">Facebook</span>
-                    <ExternalLink size={12} className="text-gray-400 ml-auto" />
+                    <span className="font-poppins text-sm font-medium text-white">Facebook</span>
+                    <ExternalLink size={12} className="text-white/50 ml-auto" />
                   </a>
                   
                   <a
                     href="https://instagram.com/alarabiacarpet"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 p-2 rounded-lg bg-pink-50 hover:bg-pink-100 transition-colors group"
+                    className="flex items-center gap-2 p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors group"
                   >
                     <div className="bg-pink-600 p-1.5 rounded-full group-hover:scale-110 transition-transform">
                       <Instagram size={16} className="text-white" />
                     </div>
-                    <span className="font-poppins text-sm font-medium text-gray-700">Instagram</span>
-                    <ExternalLink size={12} className="text-gray-400 ml-auto" />
+                    <span className="font-poppins text-sm font-medium text-white">Instagram</span>
+                    <ExternalLink size={12} className="text-white/50 ml-auto" />
                   </a>
                 </div>
               </div>
@@ -154,13 +155,13 @@ export default function ContactSection() {
           </Card>
 
           {/* Contact Form Card */}
-          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">
+          <Card className="bg-white/20 backdrop-blur-md border border-white/30 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-2 rounded-full">
                   <Mail size={18} className="text-white" />
                 </div>
-                <h3 className="font-playfair text-xl font-semibold text-gray-800">Send us a Message</h3>
+                <h3 className="font-playfair text-xl font-semibold text-white">Send us a Message</h3>
               </div>
 
               {!submitted ? (
@@ -174,7 +175,7 @@ export default function ContactSection() {
                   <input type="hidden" name="form-name" value="contact" />
                   
                   <div className="space-y-1">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 font-poppins">
+                    <label htmlFor="name" className="block text-sm font-medium text-white font-poppins">
                       Full Name *
                     </label>
                     <Input
@@ -184,12 +185,12 @@ export default function ContactSection() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-0 font-poppins"
+                      className="w-full px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:border-accent focus:ring-0 font-poppins"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 font-poppins">
+                    <label htmlFor="email" className="block text-sm font-medium text-white font-poppins">
                       Email Address *
                     </label>
                     <Input
@@ -200,12 +201,12 @@ export default function ContactSection() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-0 font-poppins"
+                      className="w-full px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:border-accent focus:ring-0 font-poppins"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 font-poppins">
+                    <label htmlFor="message" className="block text-sm font-medium text-white font-poppins">
                       Your Message *
                     </label>
                     <Textarea
@@ -216,7 +217,7 @@ export default function ContactSection() {
                       onChange={(e) => setMessage(e.target.value)}
                       required
                       rows={4}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-0 font-poppins resize-none"
+                      className="w-full px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:border-accent focus:ring-0 font-poppins resize-none"
                     />
                   </div>
 
@@ -226,11 +227,11 @@ export default function ContactSection() {
                       name="newsletter"
                       checked={newsletterSignup}
                       onCheckedChange={(checked) => setNewsletterSignup(checked as boolean)}
-                      className="mt-0.5 data-[state=checked]:bg-primary border-gray-300"
+                      className="mt-0.5 data-[state=checked]:bg-accent border-white/30"
                     />
                     <label
                       htmlFor="newsletter"
-                      className="text-sm font-poppins text-gray-600 cursor-pointer"
+                      className="text-sm font-poppins text-white/80 cursor-pointer"
                     >
                       Subscribe to our newsletter for exclusive offers and updates
                     </label>
@@ -239,7 +240,7 @@ export default function ContactSection() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-poppins font-medium py-2 rounded-lg transition-all duration-300 disabled:opacity-50"
+                    className="w-full bg-accent hover:bg-accent/90 text-white font-poppins font-medium py-2 rounded-lg transition-all duration-300 disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center space-x-2">
@@ -259,14 +260,14 @@ export default function ContactSection() {
                   <div className="bg-green-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <Mail size={24} className="text-green-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-800 font-playfair mb-2">Message Sent!</h3>
-                  <p className="text-gray-600 font-poppins text-sm mb-4">
+                  <h3 className="text-lg font-bold text-white font-playfair mb-2">Message Sent!</h3>
+                  <p className="text-white/80 font-poppins text-sm mb-4">
                     Thank you for reaching out. We'll get back to you within 24 hours.
                   </p>
                   <Button
                     onClick={() => setSubmitted(false)}
                     variant="outline"
-                    className="font-poppins text-sm"
+                    className="font-poppins text-sm border-white/30 text-white hover:bg-white hover:text-primary"
                   >
                     Send Another Message
                   </Button>
