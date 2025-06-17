@@ -13,7 +13,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ name, description, imageSrc, whatsappLink, onClick }: ProductCardProps) {
   return (
-    <Card className="overflow-hidden bg-white/20 backdrop-blur-md border border-white/30 shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 h-full flex flex-col">
+    <Card className="overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 h-full flex flex-col">
       <div 
         className="aspect-square overflow-hidden bg-secondary cursor-pointer"
         onClick={onClick}

@@ -63,7 +63,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {/* Contact Information Card */}
-          <Card className="bg-white/20 backdrop-blur-md border border-white/30 shadow-xl">
+          <Card className="shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-2 rounded-full">
@@ -155,7 +155,7 @@ export default function ContactSection() {
           </Card>
 
           {/* Contact Form Card */}
-          <Card className="bg-white/20 backdrop-blur-md border border-white/30 shadow-xl">
+          <Card className="shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-2 rounded-full">
