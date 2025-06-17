@@ -48,17 +48,18 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="home" className="relative bg-primary text-white pb-16 pt-20 lg:pt-24 overflow-hidden">
+    <section id="home" className="relative bg-gradient-to-b from-primary via-primary to-primary/95 text-white pb-32 pt-20 lg:pt-24 overflow-hidden min-h-screen">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div>
       </div>
-      <div className="container mx-auto px-4 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="container mx-auto px-4 relative flex items-center min-h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
           <div className="text-center lg:text-left">
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Transform Your Living Space with Al Arabia Carpets
             </h1>
-            <p className="font-poppins text-lg mb-8 text-white/80 max-w-xl mx-auto lg:mx-0">
+            <p className="font-poppins text-lg mb-8 text-white/90 max-w-xl mx-auto lg:mx-0">
               Premium home furnishings with free installation and delivery throughout Qatar. 
               Enhance your space with our quality Barkia, carpets, sofas, and more.
             </p>
@@ -66,26 +67,25 @@ export default function HeroSection() {
               <Button 
                 onClick={() => scrollToSection('products')}
                 size="lg" 
-                className="bg-white text-primary hover:bg-white/90 flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="bg-white text-primary hover:bg-white/90 flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg font-poppins font-medium"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center gap-2"
                 >
-                  Explore Products <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  Explore Products <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </motion.div>
               </Button>
               <Button 
                 onClick={() => scrollToSection('contact')}
                 size="lg" 
                 variant="outline" 
-                className="border-white border-2 text-white hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="border-white border-2 text-white hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105 hover:shadow-lg font-poppins font-medium"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 text-green-950"
                 >
                   Contact Us
                 </motion.div>
@@ -123,15 +123,10 @@ export default function HeroSection() {
                 }}
               >
                 <div className="relative w-full h-full">
-                  {/* Removed amber shadow effects */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 blur-md transform -translate-z-10"></div>
                   
-                  {/* Main logo with pulsing effect */}
                   <div className={`absolute inset-0 rounded-full ${isPulsing ? 'animate-pulse' : ''}`}>
                     <div className="w-full h-full relative">
-                      {/* Removed outer amber glow */}
-                      
-                      {/* Main logo */}
                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className="absolute inset-0 flex items-center justify-center"
@@ -143,9 +138,8 @@ export default function HeroSection() {
                         />
                       </motion.div>
                       
-                      {/* Shine effect */}
                       <motion.div 
-                        className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent rounded-full"
+                        className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent rounded-full"
                         animate={{ 
                           opacity: [0, 0.5, 0],
                           rotateZ: [0, 360] 

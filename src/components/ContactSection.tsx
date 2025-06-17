@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Phone, MapPin, Facebook, Instagram, Mail, MessageCircle } from "lucide-react";
@@ -67,7 +66,7 @@ export default function ContactSection() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-2 rounded-full">
-                  <Phone size={20} className="text-white" />
+                  <Phone size={18} className="text-white" />
                 </div>
                 <h3 className="font-playfair text-xl font-semibold text-gray-800">Get In Touch</h3>
               </div>
@@ -81,13 +80,13 @@ export default function ContactSection() {
                   className="flex items-center gap-3 p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-colors group"
                 >
                   <div className="bg-green-500 p-2 rounded-full group-hover:scale-110 transition-transform">
-                    <MessageCircle size={16} className="text-white" />
+                    <MessageCircle size={18} className="text-white" />
                   </div>
                   <div className="flex-1">
                     <p className="font-poppins font-medium text-gray-800">WhatsApp</p>
                     <p className="font-poppins text-sm text-gray-600">+974 5551 2858</p>
                   </div>
-                  <ExternalLink size={14} className="text-gray-400" />
+                  <ExternalLink size={16} className="text-gray-400" />
                 </a>
 
                 {/* Email */}
@@ -96,25 +95,31 @@ export default function ContactSection() {
                   className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors group"
                 >
                   <div className="bg-blue-500 p-2 rounded-full group-hover:scale-110 transition-transform">
-                    <Mail size={16} className="text-white" />
+                    <Mail size={18} className="text-white" />
                   </div>
                   <div className="flex-1">
                     <p className="font-poppins font-medium text-gray-800">Email</p>
                     <p className="font-poppins text-sm text-gray-600">info@alarabiacarpets.com</p>
                   </div>
-                  <ExternalLink size={14} className="text-gray-400" />
+                  <ExternalLink size={16} className="text-gray-400" />
                 </a>
 
-                {/* Location */}
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-50">
-                  <div className="bg-gray-500 p-2 rounded-full">
-                    <MapPin size={16} className="text-white" />
+                {/* Location with Google Maps link */}
+                <a
+                  href="https://maps.app.goo.gl/fmsyA8xgwo5qgu2H7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors group"
+                >
+                  <div className="bg-gray-500 p-2 rounded-full group-hover:scale-110 transition-transform">
+                    <MapPin size={18} className="text-white" />
                   </div>
                   <div className="flex-1">
                     <p className="font-poppins font-medium text-gray-800">Location</p>
                     <p className="font-poppins text-sm text-gray-600">Al Mansoura St, Doha, Qatar</p>
                   </div>
-                </div>
+                  <ExternalLink size={16} className="text-gray-400" />
+                </a>
 
                 {/* Social Media */}
                 <div className="grid grid-cols-2 gap-3 pt-2">
@@ -125,7 +130,7 @@ export default function ContactSection() {
                     className="flex items-center gap-2 p-2 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors group"
                   >
                     <div className="bg-blue-600 p-1.5 rounded-full group-hover:scale-110 transition-transform">
-                      <Facebook size={14} className="text-white" />
+                      <Facebook size={16} className="text-white" />
                     </div>
                     <span className="font-poppins text-sm font-medium text-gray-700">Facebook</span>
                     <ExternalLink size={12} className="text-gray-400 ml-auto" />
@@ -138,7 +143,7 @@ export default function ContactSection() {
                     className="flex items-center gap-2 p-2 rounded-lg bg-pink-50 hover:bg-pink-100 transition-colors group"
                   >
                     <div className="bg-pink-600 p-1.5 rounded-full group-hover:scale-110 transition-transform">
-                      <Instagram size={14} className="text-white" />
+                      <Instagram size={16} className="text-white" />
                     </div>
                     <span className="font-poppins text-sm font-medium text-gray-700">Instagram</span>
                     <ExternalLink size={12} className="text-gray-400 ml-auto" />
@@ -153,7 +158,7 @@ export default function ContactSection() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-2 rounded-full">
-                  <Mail size={20} className="text-white" />
+                  <Mail size={18} className="text-white" />
                 </div>
                 <h3 className="font-playfair text-xl font-semibold text-gray-800">Send us a Message</h3>
               </div>
@@ -243,7 +248,7 @@ export default function ContactSection() {
                       </div>
                     ) : (
                       <div className="flex items-center space-x-2">
-                        <Mail size={16} />
+                        <Mail size={18} />
                         <span>Send Message</span>
                       </div>
                     )}
