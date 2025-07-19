@@ -62,14 +62,14 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
+      <nav className="container mx-auto px-4 py-4 flex items-center justify-between md:justify-start">
+        <Link to="/" className="flex items-center space-x-2 md:flex-none flex-1">
           <img 
             src="/lovable-uploads/tran-golden-logo.png" 
             alt="Al Arabia Qarpets Logo" 
             className="h-12 w-12 object-contain"
           />
-          <span className="font-playfair text-xl font-bold sm:inline-block">Al Arabia Carpets</span>
+          <span className="font-playfair text-xl font-bold sm:inline-block text-center md:text-left flex-1">Al Arabia Carpets</span>
         </Link>
         
         {/* Desktop Navigation */}
@@ -129,7 +129,7 @@ export default function Navbar() {
         </div>
         
         {/* Mobile menu button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex-shrink-0">
           <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </Button>
