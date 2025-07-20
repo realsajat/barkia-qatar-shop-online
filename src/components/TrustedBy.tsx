@@ -14,7 +14,7 @@ const TrustedBy: React.FC = () => {
 
   return (
     <section className="py-16 bg-secondary">
-      <div className="container mx-auto text-center lg:text-left">
+      <div className="container mx-auto text-center">
         <h2 className="font-playfair text-4xl font-bold mb-4">Trusted By</h2>
         <p className="font-poppins text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
           We are proud to partner with leading companies and organizations in Qatar.
