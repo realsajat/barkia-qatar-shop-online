@@ -6,6 +6,13 @@ const logos = [
   { src: '/logos/logo3.png', alt: 'Festival City' },
   { src: '/logos/logo4.png', alt: 'Al Khalij' },
   { src: '/logos/logo5.png', alt: 'Al Arabia' },
+  { src: '/logos/logo6.png', alt: 'AL MUFTAH GROUP' },
+  { src: '/logos/logo7.png', alt: 'Al Anaka event planning' },
+  { src: '/logos/logo8.png', alt: 'ALSAM Trading & contacting service L.L.C' },
+  { src: '/logos/logo9.png', alt: 'GRADE ONE Trading & Contracting' },
+  { src: '/logos/logo10.png', alt: 'Inworth' },
+  { src: '/logos/logo11.png', alt: 'Petro guard offshore  Shapelier' },
+  { src: '/logos/logo12.png', alt: 'Asia trading Engineering & Services' },
 ];
 
 const TrustedBy: React.FC = () => {
@@ -31,7 +38,7 @@ const TrustedBy: React.FC = () => {
               const logoClass = `w-auto object-contain transition-all duration-300 ${isLarger ? 'max-h-24 sm:max-h-36' : 'max-h-20 sm:max-h-28'}`;
 
               return (
-                <div key={index} className="flex-shrink-0 w-48 h-28 sm:w-64 sm:h-40 flex items-center justify-center mx-1 sm:mx-4">
+                <div key={index} className="flex-shrink-0 w-48 h-28 sm:w-64 sm:h-40 flex items-center justify-center mx-0.5 sm:mx-2">
                   <img
                     src={logo.src}
                     alt={logo.alt}
