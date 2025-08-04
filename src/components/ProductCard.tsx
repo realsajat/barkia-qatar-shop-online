@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, ExternalLink } from "lucide-react";
+import { ShoppingCart, ExternalLink, ImageIcon } from "lucide-react";
 import { memo, useCallback, useState } from "react";
 
 interface ProductCardProps {
@@ -48,19 +48,20 @@ const ProductCard = memo(function ProductCard({
         className="aspect-square overflow-hidden bg-secondary cursor-pointer relative"
         onClick={handleCardClick}
       >
-        {/* Placeholder while loading */}
-        {!isLoaded && !hasError && (
+        {/* Loading state */}
+        {(!isLoaded && !hasError) && (
           <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse flex items-center justify-center">
             <div className="w-12 h-12 border-4 border-green-200 border-t-green-600 rounded-full animate-spin"></div>
           </div>
         )}
         
-        {/* Error state */}
+        {/* Error state with better fallback */}
         {hasError && (
-          <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-            <div className="text-gray-400 text-center">
-              <div className="text-2xl mb-2">📷</div>
-              <div className="text-sm">Image not available</div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+            <div className="text-gray-500 text-center p-4">
+              <ImageIcon size={48} className="mx-auto mb-3 text-gray-400" />
+              <div className="text-sm font-medium mb-1">Image not available</div>
+              <div className="text-xs text-gray-400">{name}</div>
             </div>
           </div>
         )}

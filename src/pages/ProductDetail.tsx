@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsappButton from "@/components/WhatsappButton";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, ChevronLeft, Check } from "lucide-react";
+import { ShoppingCart, ChevronLeft, Check, ImageIcon } from "lucide-react";
 
 interface Product {
   id: string;
@@ -22,6 +22,8 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     // Simulated data fetch - in a real app, fetch from an API
@@ -116,6 +118,16 @@ const ProductDetail = () => {
     }, 300); // Simulate loading
   }, [productId]);
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+    setImageError(false);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoaded(true);
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col">
@@ -162,11 +174,36 @@ const ProductDetail = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white rounded-lg shadow-md overflow-hidden">
               {/* Product Image */}
-              <div className="h-[300px] md:h-[500px] relative overflow-hidden">
+              <div className="h-[300px] md:h-[500px] relative overflow-hidden bg-gray-100">
+                {/* Loading state */}
+                {!imageLoaded && !imageError && (
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse flex items-center justify-center">
+                    <div className="w-16 h-16 border-4 border-green-200 border-t-green-600 rounded-full animate-spin"></div>
+                  </div>
+                )}
+                
+                {/* Error state */}
+                {imageError && (
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <div className="text-gray-500 text-center p-6">
+                      <ImageIcon size={64} className="mx-auto mb-4 text-gray-400" />
+                      <div className="text-lg font-medium mb-2">Image not available</div>
+                      <div className="text-sm text-gray-400">{product?.name}</div>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Main image */}
                 <img 
-                  src={product.imageSrc} 
-                  alt={product.name} 
-                  className="w-full h-full object-cover" 
+                  src={product?.imageSrc} 
+                  alt={product?.name} 
+                  className={`w-full h-full object-cover transition-opacity duration-500 ${
+                    imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  onLoad={handleImageLoad}
+                  onError={handleImageError}
+                  loading="eager"
+                  style={{ display: imageError ? 'none' : 'block' }}
                 />
               </div>
               
