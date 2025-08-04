@@ -11,6 +11,7 @@ interface ProductCardProps {
   imageSrc: string;
   whatsappLink: string;
   onClick?: () => void;
+  priority?: boolean; // For above-the-fold images
 }
 
 const ProductCard = memo(function ProductCard({ 
@@ -18,11 +19,13 @@ const ProductCard = memo(function ProductCard({
   description, 
   imageSrc, 
   whatsappLink, 
-  onClick 
+  onClick,
+  priority = false
 }: ProductCardProps) {
-  const { imgRef, imageSrc: lazyImageSrc, isLoaded, isInView } = useLazyImage({
+  const { imgRef, imageSrc: lazyImageSrc, isLoaded, isInView, hasError, handleImageLoad, handleImageError } = useLazyImage({
     src: imageSrc,
-    rootMargin: '100px'
+    rootMargin: '200px', // Increased for earlier loading
+    priority
   });
 
   const handleCardClick = useCallback(() => {
@@ -40,9 +43,19 @@ const ProductCard = memo(function ProductCard({
         onClick={handleCardClick}
       >
         {/* Placeholder while loading */}
-        {!isLoaded && (
+        {!isLoaded && !hasError && (
           <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse flex items-center justify-center">
             <div className="w-12 h-12 border-4 border-green-200 border-t-green-600 rounded-full animate-spin"></div>
+          </div>
+        )}
+        
+        {/* Error state */}
+        {hasError && (
+          <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+            <div className="text-gray-400 text-center">
+              <div className="text-2xl mb-2">📷</div>
+              <div className="text-sm">Image not available</div>
+            </div>
           </div>
         )}
         
@@ -50,10 +63,12 @@ const ProductCard = memo(function ProductCard({
           ref={imgRef}
           src={lazyImageSrc || ''} 
           alt={name}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
           decoding="async"
-          className={`h-full w-full object-cover transition-all duration-300 hover:scale-105 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          className={`h-full w-full object-cover transition-all duration-500 hover:scale-105 ${
+            isLoaded && !hasError ? 'opacity-100' : 'opacity-0'
           }`}
           style={{ display: lazyImageSrc ? 'block' : 'none' }}
         />
