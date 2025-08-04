@@ -18,14 +18,14 @@ export default function ProductsSection() {
       id: "luxury-carpets",
       name: "Luxury Carpets",
       description: "Soft, durable carpets that add comfort and style to any room.",
-      imageSrc: "carpet.png",
+      imageSrc: "/carpet.png",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
     },
     {
       id: "majlis-sets",
       name: "Modern Majlis Sofas",
       description: "Contemporary majlis sofas that blend tradition and modern comfort.",
-      imageSrc: "majlis-sofa.png",
+      imageSrc: "/majlis-sofa.png",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Majlis%20Sofas"
     },
   ];
@@ -50,6 +50,7 @@ export default function ProductsSection() {
               imageSrc={product.imageSrc}
               whatsappLink={product.whatsappLink}
               onClick={() => window.location.href = `/products/${product.id}`}
+              priority={true} // All featured products load immediately
             />
           ))}
         </div>
