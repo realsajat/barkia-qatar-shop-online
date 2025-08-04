@@ -2,8 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, ExternalLink } from "lucide-react";
-import { memo, useCallback } from "react";
-import { useLazyImage } from "@/hooks/use-lazy-image";
+import { memo, useCallback, useState } from "react";
 
 interface ProductCardProps {
   name: string;
@@ -22,11 +21,8 @@ const ProductCard = memo(function ProductCard({
   onClick,
   priority = false
 }: ProductCardProps) {
-  const { imgRef, imageSrc: lazyImageSrc, isLoaded, isInView, hasError, handleImageLoad, handleImageError } = useLazyImage({
-    src: imageSrc,
-    rootMargin: '200px', // Increased for earlier loading
-    priority
-  });
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const handleCardClick = useCallback(() => {
     onClick?.();
@@ -34,6 +30,16 @@ const ProductCard = memo(function ProductCard({
 
   const handleWhatsAppClick = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
+  }, []);
+
+  const handleImageLoad = useCallback(() => {
+    setIsLoaded(true);
+    setHasError(false);
+  }, []);
+
+  const handleImageError = useCallback(() => {
+    setHasError(true);
+    setIsLoaded(true);
   }, []);
 
   return (
@@ -60,8 +66,7 @@ const ProductCard = memo(function ProductCard({
         )}
         
         <img 
-          ref={imgRef}
-          src={lazyImageSrc || ''} 
+          src={imageSrc} 
           alt={name}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
@@ -70,7 +75,6 @@ const ProductCard = memo(function ProductCard({
           className={`h-full w-full object-cover transition-all duration-500 hover:scale-105 ${
             isLoaded && !hasError ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ display: lazyImageSrc ? 'block' : 'none' }}
         />
       </div>
       <CardContent className="p-4 flex flex-col flex-grow">
