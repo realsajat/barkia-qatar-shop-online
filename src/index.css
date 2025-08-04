@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+@layer utilities {
+  /* Lazy loading utilities */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Hardware acceleration for smooth animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Prevent layout shifts */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  /* Optimize font rendering */
+  .font-optimized {
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Image loading optimization */
+  .img-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
