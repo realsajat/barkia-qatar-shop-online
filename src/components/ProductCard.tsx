@@ -2,8 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, ExternalLink, ImageIcon } from "lucide-react";
-import { memo, useCallback } from "react";
-import { useLazyImage } from "@/hooks/use-lazy-image";
+import { memo, useCallback, useState } from "react";
 
 interface ProductCardProps {
   name: string;
@@ -22,11 +21,8 @@ const ProductCard = memo(function ProductCard({
   onClick,
   priority = false
 }: ProductCardProps) {
-  const { imgRef, imageSrc: lazyImageSrc, isLoaded, isInView, hasError, isLoading, handleImageLoad, handleImageError } = useLazyImage({
-    src: imageSrc,
-    rootMargin: '200px', // Increased for earlier loading
-    priority
-  });
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const handleCardClick = useCallback(() => {
     onClick?.();
@@ -36,6 +32,16 @@ const ProductCard = memo(function ProductCard({
     e.stopPropagation();
   }, []);
 
+  const handleImageLoad = useCallback(() => {
+    setIsLoaded(true);
+    setHasError(false);
+  }, []);
+
+  const handleImageError = useCallback(() => {
+    setHasError(true);
+    setIsLoaded(true);
+  }, []);
+
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 h-full flex flex-col">
       <div 
@@ -43,7 +49,7 @@ const ProductCard = memo(function ProductCard({
         onClick={handleCardClick}
       >
         {/* Loading state */}
-        {(isLoading || (!isLoaded && !hasError)) && (
+        {(!isLoaded && !hasError) && (
           <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse flex items-center justify-center">
             <div className="w-12 h-12 border-4 border-green-200 border-t-green-600 rounded-full animate-spin"></div>
           </div>
@@ -60,33 +66,17 @@ const ProductCard = memo(function ProductCard({
           </div>
         )}
         
-        {/* Main image */}
-        {lazyImageSrc && (
-          <img 
-            ref={imgRef}
-            src={lazyImageSrc} 
-            alt={name}
-            loading={priority ? "eager" : "lazy"}
-            decoding="async"
-            onLoad={handleImageLoad}
-            onError={handleImageError}
-            className={`h-full w-full object-cover transition-all duration-500 hover:scale-105 ${
-              isLoaded && !hasError ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ 
-              display: hasError ? 'none' : 'block',
-              position: hasError ? 'absolute' : 'static',
-              zIndex: hasError ? -1 : 1
-            }}
-          />
-        )}
-        
-        {/* Fallback placeholder for non-priority images that haven't loaded yet */}
-        {!priority && !isInView && !hasError && (
-          <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-            <ImageIcon size={32} className="text-gray-400" />
-          </div>
-        )}
+        <img 
+          src={imageSrc} 
+          alt={name}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          className={`h-full w-full object-cover transition-all duration-500 hover:scale-105 ${
+            isLoaded && !hasError ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
       </div>
       <CardContent className="p-4 flex flex-col flex-grow">
         <h3 
