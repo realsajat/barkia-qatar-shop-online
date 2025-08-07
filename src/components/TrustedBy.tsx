@@ -13,6 +13,8 @@ const logos = [
   { src: '/logos/logo10.png', alt: 'Inworth' },
   { src: '/logos/logo11.png', alt: 'Petro guard offshore  Shapelier' },
   { src: '/logos/logo12.png', alt: 'Asia trading Engineering & Services' },
+  { src: '/logos/logo13.png', alt: 'Aquatech for trading & contracting WLL' },
+  { src: '/logos/logo14.png', alt: 'New star Contracting Co W.L.L' },
 ];
 
 const TrustedBy: React.FC = () => {
