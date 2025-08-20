@@ -263,7 +263,7 @@ const ContactSection = memo(function ContactSection() {
                 <ExternalLink size={14} />
               </a>
             </Button>
-            <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white/10 font-poppins font-medium">
+            <Button asChild variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 font-poppins font-medium">
               <a href="tel:+97455512858" className="flex items-center gap-2">
                 <Phone size={18} />
                 Call Now
