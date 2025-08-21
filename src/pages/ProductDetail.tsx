@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsappButton from "@/components/WhatsappButton";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, ChevronLeft, Check, ImageIcon } from "lucide-react";
 
@@ -289,8 +288,7 @@ const ProductDetail = () => {
           </div>
         </section>
       </main>
-      <Footer />
-      <WhatsappButton />
+  <Footer />
     </div>
   );
 };

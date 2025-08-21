@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsappButton from "@/components/WhatsappButton";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -248,8 +247,7 @@ const Products = () => {
           </div>
         </section>
       </main>
-      <Footer />
-      <WhatsappButton />
+  <Footer />
     </div>
   );
 };

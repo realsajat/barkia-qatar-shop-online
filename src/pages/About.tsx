@@ -1,7 +1,6 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsappButton from "@/components/WhatsappButton";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -152,8 +151,7 @@ const About = () => {
           </div>
         </section>
       </main>
-      <Footer />
-      <WhatsappButton />
+  <Footer />
     </div>
   );
 };
