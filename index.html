@@ -26,10 +26,8 @@
     <meta name="geo.position" content="25.276987;51.520008" />
     <meta name="ICBM" content="25.276987, 51.520008" />
     
-    <!-- Preload critical images for faster loading -->
-    <link rel="preload" as="image" href="/barkia.png" />
-    <link rel="preload" as="image" href="/carpet.png" />
-    <link rel="preload" as="image" href="/majlis-sofa.png" />
+  <!-- Keep only ultra-critical preloads (logo) to avoid blocking main thread -->
+  <link rel="preload" as="image" href="/lovable-uploads/green-white-logo.png" />
     
     <!-- Business information -->
     <meta name="business:contact_data:street_address" content="Al Mansoura St" />
@@ -149,8 +147,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/lovable-uploads/green-white-logo.png" as="image" type="image/png">
+  <!-- Preload critical resources (logo only) -->
+  <link rel="preload" href="/lovable-uploads/green-white-logo.png" as="image" type="image/png">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://wa.me">
     
@@ -173,17 +171,24 @@
       <input type="checkbox" name="newsletter" />
     </form>
   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68a5dfd1f412351925ef40a3/1j33v4jea';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+  <!-- Tawk.to chat widget deferred to idle time to avoid blocking navigation -->
+  <script>
+    // Defer loading third-party chat widget until browser is idle
+    function loadTawk() {
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/68a5dfd1f412351925ef40a3/1j33v4jea';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    }
+    if ('requestIdleCallback' in window) {
+      // Use requestIdleCallback if available (no TS assertions in HTML)
+      try { (window.requestIdleCallback)(loadTawk, {timeout: 3000}); } catch(e) { setTimeout(loadTawk, 1500); }
+    } else {
+      window.addEventListener('load', function(){ setTimeout(loadTawk, 1500); });
+    }
+  </script>
 <!--End of Tawk.to Script-->
   </body>
 </html>

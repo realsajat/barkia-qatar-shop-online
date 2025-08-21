@@ -122,6 +122,16 @@ const Navbar = memo(function Navbar() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
+              onMouseEnter={() => {
+                // Prefetch page chunks on hover (non-blocking)
+                try {
+                  if (item.id === 'products') import('@/pages/Products');
+                  if (item.id === 'home') import('@/pages/Index');
+                  if (item.id === 'contact') import('@/pages/Contact');
+                } catch (e) {
+                  // ignore prefetch errors
+                }
+              }}
               className={`px-4 py-2 rounded-lg font-poppins font-medium transition-all duration-300 hover:bg-white/10 ${
                 isActive(item.id) 
                   ? 'bg-white/20 text-white' 

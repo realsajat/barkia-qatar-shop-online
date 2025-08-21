@@ -201,7 +201,8 @@ const ProductDetail = () => {
                   }`}
                   onLoad={handleImageLoad}
                   onError={handleImageError}
-                  loading="eager"
+                  loading="lazy"
+                  decoding="async"
                   style={{ display: imageError ? 'none' : 'block' }}
                 />
               </div>

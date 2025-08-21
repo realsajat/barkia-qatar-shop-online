@@ -10,8 +10,16 @@ interface ImagePreloaderProps {
  */
 const ImagePreloader = ({ images = [] }: ImagePreloaderProps) => {
   useEffect(() => {
-    // Default critical images to preload
-    const criticalImages = [
+    // Only preload the truly critical (logo / hero) images eagerly.
+    // Defer the rest to idle time so we don't block navigation or main thread.
+    const eager = ['/lovable-uploads/green-white-logo.png', '/interior.png', ...images];
+    const uniqueEager = [...new Set(eager)];
+
+    // Start small, non-blocking preload for very small set
+    preloadImages(uniqueEager).catch(() => {});
+
+    // Defer background preloads for other images so they don't affect first navigation
+    const deferred = [
       '/barkia.png',
       '/carpet.png',
       '/majlis-sofa.png',
@@ -19,18 +27,32 @@ const ImagePreloader = ({ images = [] }: ImagePreloaderProps) => {
       '/curtain.png',
       '/roller.png',
       '/pvc-barkia.png',
-      '/grass-carpet.png',
-      '/interior.png',
-      ...images
-    ];
+      '/grass-carpet.png'
+    ].filter(p => !uniqueEager.includes(p));
 
-    // Remove duplicates
-    const uniqueImages = [...new Set(criticalImages)];
+  let idleId: number | null = null;
+    const runDeferred = () => {
+      preloadImages(deferred).catch(() => {});
+    };
 
-    // Preload images in the background
-    preloadImages(uniqueImages).catch(error => {
-      console.warn('Some images failed to preload:', error);
-    });
+    if ('requestIdleCallback' in window) {
+      // @ts-ignore - requestIdleCallback types vary by environment
+      idleId = (window as any).requestIdleCallback(runDeferred, { timeout: 3000 });
+    } else {
+      // Fallback to timeout - cast to number for TypeScript
+      idleId = (window as unknown as any).setTimeout(runDeferred, 3000) as number;
+    }
+
+    return () => {
+      if (idleId) {
+        if ('cancelIdleCallback' in window) {
+          // @ts-ignore
+          (window as any).cancelIdleCallback(idleId);
+        } else {
+          clearTimeout(idleId as number);
+        }
+      }
+    };
   }, [images]);
 
   // This component doesn't render anything

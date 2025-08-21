@@ -63,15 +63,40 @@ export const getFallbackImage = (): string => {
  * @returns Promise that resolves when all images are loaded or failed
  */
 export const preloadImages = (imagePaths: string[]): Promise<void[]> => {
-  const promises = imagePaths.map(path => 
+  const promises = imagePaths.map((p) =>
     new Promise<void>((resolve) => {
-      const img = new Image();
-      img.onload = () => resolve();
-      img.onerror = () => resolve(); // Resolve even on error to not block
-      img.src = normalizeImagePath(path);
+      const path = normalizeImagePath(p);
+      try {
+        const img = new Image();
+        let settled = false;
+
+        const finish = () => {
+          if (settled) return;
+          settled = true;
+          resolve();
+        };
+
+        img.onload = () => {
+          // Use decode() for modern browsers to ensure image is ready to paint
+          if ((img as any).decode) {
+            (img as any).decode().then(finish).catch(finish);
+          } else {
+            finish();
+          }
+        };
+
+        img.onerror = () => finish(); // Resolve even on error to not block
+
+        // Safety timeout in case onload/onerror never fire
+        setTimeout(finish, 5000);
+
+        img.src = path;
+      } catch (e) {
+        resolve();
+      }
     })
   );
-  
+
   return Promise.all(promises);
 };
 
