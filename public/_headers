@@ -1,11 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self';
-    img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://fonts.gstatic.com https://embed.tawk.to https://tawk.to https://*.tawk.to;
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://embed.tawk.to https://*.tawk.to;
-    connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://embed.tawk.to https://tawk.to https://*.tawk.to wss:;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
-    frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.netlify.com https://*.netlify.app
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://fonts.gstatic.com https://embed.tawk.to https://tawk.to https://*.tawk.to; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://embed.tawk.to https://*.tawk.to; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://embed.tawk.to https://tawk.to https://*.tawk.to wss:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.netlify.com https://*.netlify.app
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
