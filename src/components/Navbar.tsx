@@ -1,7 +1,7 @@
 
 import { useState, useEffect, memo, useCallback, useMemo, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, ShoppingCart, Info } from "lucide-react";
+import { Menu, X, Home, ShoppingCart, Info, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Throttle function for scroll events
@@ -154,6 +154,17 @@ const Navbar = memo(function Navbar() {
           >
             About
           </Link>
+
+          <Link 
+            to="/contact" 
+            className={`px-4 py-2 rounded-lg font-poppins font-medium transition-all duration-300 hover:bg-white/10 ${
+              location.pathname === '/contact' 
+                ? 'bg-white/20 text-white' 
+                : 'text-white/80 hover:text-white'
+            }`}
+          >
+            Contact
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -215,6 +226,19 @@ const Navbar = memo(function Navbar() {
             >
               <Info size={20} />
               <span>About</span>
+            </Link>
+
+            <Link 
+              to="/contact" 
+              onClick={closeMenu}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg font-poppins font-medium transition-all duration-300 ${
+                location.pathname === '/contact' 
+                  ? 'bg-white/20 text-white' 
+                  : 'text-white/80 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              <MessageCircle size={20} />
+              <span>Contact</span>
             </Link>
           </div>
         </div>

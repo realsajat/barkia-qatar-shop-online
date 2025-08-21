@@ -1,23 +1,9 @@
 
 import { MessageCircle, Mail, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const location = useLocation();
-  
-  const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    
-    // If we're on the homepage, scroll to the contact section
-    if (location.pathname === "/") {
-      document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
-    } else {
-      // If we're on another page, navigate to homepage and then scroll to contact
-      window.location.href = '/#contact';
-    }
-  };
   
   return (
     <footer className="bg-primary text-white pt-12 pb-6" id="footer">
@@ -44,13 +30,7 @@ export default function Footer() {
               <Link to="/" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Home</Link>
               <Link to="/products" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Products</Link>
               <Link to="/about" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">About Us</Link>
-              <a 
-                href="/#contact" 
-                onClick={scrollToContact} 
-                className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors"
-              >
-                Contact Us
-              </a>
+              <Link to="/contact" className="font-poppins text-sm hover:text-accent-DEFAULT transition-colors">Contact Us</Link>
             </nav>
           </div>
           
