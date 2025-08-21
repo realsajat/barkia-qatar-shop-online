@@ -180,8 +180,9 @@ const ContactSection = memo(function ContactSection() {
             <CardContent className="p-6">
               <h3 className="font-playfair text-xl font-semibold text-white mb-4">Send us a Message</h3>
               
-              <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" className="space-y-4">
+              <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" className="space-y-4">
                 <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
                 
                 <div>
                   <Input
