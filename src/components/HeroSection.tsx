@@ -96,9 +96,9 @@ export default function HeroSection() {
                     <div className="flex items-center gap-2"><Star className="w-5 h-5 text-yellow-400 fill-current" /><span className="text-sm font-medium">Free Installation</span></div>
                   </Motion.div>
 
-                  <Motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <Button onClick={() => scrollToSection('products')} size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg rounded-xl font-poppins font-semibold group transition-all duration-300 hover:scale-105 hover:shadow-2xl">Explore Products <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" /></Button>
-                    <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="border-2 border-white/40 text-white bg-white/10 backdrop-blur-md hover:bg-white hover:text-primary px-8 py-6 text-lg rounded-xl font-poppins font-semibold transition-all duration-300 hover:scale-105">Get Quote</Button>
+                  <Motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 w-full max-w-lg">
+                    <Button onClick={() => scrollToSection('products')} size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg rounded-xl font-poppins font-semibold group transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full sm:w-auto">Explore Products <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" /></Button>
+                    <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="border-2 border-white/40 text-white bg-white/10 backdrop-blur-md hover:bg-white hover:text-primary px-8 py-6 text-lg rounded-xl font-poppins font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto">Get Quote</Button>
                   </Motion.div>
                 </>
               ) : (
@@ -109,9 +109,10 @@ export default function HeroSection() {
                   </div>
                   <h1 className="font-playfair text-4xl md:text-5xl font-bold leading-tight">Transform Your <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Living Space</span></h1>
                   <p className="font-poppins text-base text-white/90 max-w-lg mx-auto lg:mx-0">Discover premium carpets, elegant sofas, and quality Barkia with free installation and delivery throughout Qatar.</p>
-                  <div className="flex gap-3 justify-center pt-4">
-                    <Button onClick={() => scrollToSection('products')} size="lg" className="bg-accent text-white px-6 py-3">Explore</Button>
-                    <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="border text-white px-6 py-3">Get Quote</Button>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+                    <Button onClick={() => scrollToSection('products')} size="lg" className="bg-accent text-white px-6 py-3 rounded-xl w-full sm:w-auto">Explore</Button>
+                    {/* Make Get Quote clearly visible on dark backgrounds: use a subtle translucent white bg and white text */}
+                    <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white/30 text-white bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl">Get Quote</Button>
                   </div>
                 </>
               )}
