@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/lovable-uploads/green-white-logo.png" 
+                src="/lovable-uploads/green-white-logo.webp" 
                 alt="Al Arabia Carpets Logo" 
                 className="h-12 w-12 mr-3" 
               />

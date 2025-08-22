@@ -56,32 +56,30 @@ const Navbar = memo(function Navbar() {
   // Track scroll position to update active link on home page with throttling
   useEffect(() => {
     if (!isHomePage) return;
-    
-    const handleScroll = throttle(() => {
-      const sections = ["home", "products", "contact"];
-      const currentPos = window.scrollY + 100;
+    // Use IntersectionObserver instead of continuous scroll measurements to avoid forced reflows
+    const sections = ['home', 'products', 'contact'];
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '0px 0px -60% 0px', // consider section active when it crosses 40% from top
+      threshold: [0, 0.1, 0.5, 1]
+    };
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          
-          if (currentPos >= top && currentPos <= top + height) {
-            setActiveSection(section);
-            break;
-          }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          if (sections.includes(id)) setActiveSection(id);
         }
-      }
-    }, 100); // Throttle to 100ms
+      });
+    }, observerOptions);
 
-    // Use passive listener for better performance
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
+      observer.disconnect();
     };
   }, [isHomePage]);
 

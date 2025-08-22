@@ -12,7 +12,7 @@ const ImagePreloader = ({ images = [] }: ImagePreloaderProps) => {
   useEffect(() => {
     // Only preload the truly critical (logo / hero) images eagerly.
     // Defer the rest to idle time so we don't block navigation or main thread.
-    const eager = ['/lovable-uploads/green-white-logo.png', '/interior.png', ...images];
+    const eager = ['/lovable-uploads/green-white-logo.webp', '/interior.webp', ...images];
     const uniqueEager = [...new Set(eager)];
 
     // Start small, non-blocking preload for very small set
@@ -20,14 +20,14 @@ const ImagePreloader = ({ images = [] }: ImagePreloaderProps) => {
 
     // Defer background preloads for other images so they don't affect first navigation
     const deferred = [
-      '/barkia.png',
-      '/carpet.png',
-      '/majlis-sofa.png',
-      '/sofa.png',
-      '/curtain.png',
-      '/roller.png',
-      '/pvc-barkia.png',
-      '/grass-carpet.png'
+      '/barkia.webp',
+      '/carpet.webp',
+      '/majlis-sofa.webp',
+      '/sofa.webp',
+      '/curtain.webp',
+      '/roller.webp',
+      '/pvc-barkia.webp',
+      '/grass-carpet.webp'
     ].filter(p => !uniqueEager.includes(p));
 
   let idleId: number | null = null;

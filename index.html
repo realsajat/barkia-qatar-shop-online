@@ -145,7 +145,11 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Load Google Fonts without blocking render: preload then switch to stylesheet onload -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" onload="this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </noscript>
     
   <!-- Preload critical resources (logo only) -->
   <link rel="preload" href="/lovable-uploads/green-white-logo.webp" as="image" type="image/png">
@@ -189,6 +193,6 @@
       window.addEventListener('load', function(){ setTimeout(loadTawk, 1500); });
     }
   </script>
-<!--End of Tawk.to Script-->
+  <!--End of Tawk.to Script-->
   </body>
 </html>
