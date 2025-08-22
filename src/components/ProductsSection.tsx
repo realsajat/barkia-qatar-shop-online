@@ -11,21 +11,21 @@ export default function ProductsSection() {
       id: "premium-barkia",
       name: "Premium Barkia",
       description: "High-quality Barkia panels for elegant room separation and decoration.",
-      imageSrc: "/barkia.png",
+      imageSrc: "/barkia.webp",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Premium%20Barkia"
     },
     {
       id: "luxury-carpets",
       name: "Luxury Carpets",
       description: "Soft, durable carpets that add comfort and style to any room.",
-      imageSrc: "/carpet.png",
+      imageSrc: "/carpet.webp",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
     },
     {
       id: "majlis-sets",
       name: "Modern Majlis Sofas",
       description: "Contemporary majlis sofas that blend tradition and modern comfort.",
-      imageSrc: "/majlis-sofa.png",
+      imageSrc: "/majlis-sofa.webp",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Majlis%20Sofas"
     },
   ];

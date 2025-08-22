@@ -107,7 +107,7 @@ const Navbar = memo(function Navbar() {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3">
           <img 
-            src="/lovable-uploads/tran-golden-logo.png" 
+            src="/lovable-uploads/tran-golden-logo.webp" 
             alt="Al Arabia Qarpets Logo" 
             className="h-12 w-12 object-contain"
             loading="eager"

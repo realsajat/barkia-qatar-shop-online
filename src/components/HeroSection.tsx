@@ -142,7 +142,7 @@ export default function HeroSection() {
                 {/* Logo Container with Glassmorphism */}
                 <div className="relative w-full h-full flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-2xl">
                   <motion.img 
-                    src="/lovable-uploads/tran-golden-logo.png" 
+                    src="/lovable-uploads/tran-golden-logo.webp" 
                     alt="Al Arabia Carpets Logo" 
                     className="w-3/4 h-3/4 object-contain drop-shadow-2xl"
                     animate={{ 

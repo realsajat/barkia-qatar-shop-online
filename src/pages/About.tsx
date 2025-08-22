@@ -44,7 +44,7 @@ const About = () => {
                   <div className="absolute inset-0 rounded-full overflow-hidden bg-secondary">
                     <AspectRatio ratio={1/1} className="w-full h-full">
                       <img 
-                        src="/About Al Arabia Carpets.svg" 
+                        src="/About Al Arabia Carpets.webp" 
                         alt="Al Arabia Carpets shopfront" 
                         className="w-full h-full object-cover"
                       />

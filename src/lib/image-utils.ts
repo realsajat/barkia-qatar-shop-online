@@ -54,7 +54,7 @@ export const checkImageExists = (imagePath: string): Promise<boolean> => {
  * @returns Path to placeholder image
  */
 export const getFallbackImage = (): string => {
-  return '/placeholder.svg';
+  return '/placeholder.webp';
 };
 
 /**

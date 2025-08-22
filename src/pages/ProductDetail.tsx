@@ -31,7 +31,7 @@ const ProductDetail = () => {
         id: "premium-barkia",
         name: "Premium Barkia",
         description: "High-quality Barkia panels for elegant room separation and decoration. Our premium Barkia panels are crafted from the finest materials and designed to add a touch of elegance to any space. Perfect for home or office, these panels offer both aesthetic appeal and functionality.",
-        imageSrc: "/barkia.png",
+        imageSrc: "/barkia.webp",
         category: "barkia",
         price: "Starting from 350 QAR/sqm",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Premium%20Barkia"
@@ -40,7 +40,7 @@ const ProductDetail = () => {
         id: "pvc-barkia",
         name: "PVC Barkia",
         description: "Durable and water-resistant PVC Barkia perfect for high-moisture areas. These innovative panels combine the beauty of traditional Barkia with the practicality of PVC, making them ideal for bathrooms, kitchens, and other areas exposed to moisture or humidity.",
-        imageSrc: "/pvc-barkia.png",
+        imageSrc: "/pvc-barkia.webp",
         category: "barkia",
         price: "Starting from 250 QAR/sqm",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20PVC%20Barkia"
@@ -49,7 +49,7 @@ const ProductDetail = () => {
         id: "luxury-carpets",
         name: "Luxury Carpets",
         description: "Soft, durable carpets that add comfort and style to any room. Our luxury carpets are made from premium materials that provide exceptional comfort underfoot while enhancing your interior décor. Available in various designs, colors, and textures to suit your preferences.",
-        imageSrc: "/carpet.png",
+        imageSrc: "/carpet.webp",
         category: "carpet",
         price: "Starting from 120 QAR/sqm",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
@@ -58,7 +58,7 @@ const ProductDetail = () => {
         id: "grass-carpet",
         name: "Grass Carpet",
         description: "Natural-looking grass carpets ideal for outdoor areas and balconies. These synthetic grass carpets offer the lush appearance of natural grass without the maintenance. Perfect for balconies, patios, and play areas, they're UV-resistant and designed to withstand Qatar's climate.",
-        imageSrc: "/grass-carpet.png",
+        imageSrc: "/grass-carpet.webp",
         category: "carpet",
         price: "Starting from 80 QAR/sqm",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Grass%20Carpet"
@@ -67,7 +67,7 @@ const ProductDetail = () => {
         id: "roller-blinds",
         name: "Roller Blinds",
         description: "Modern roller blinds providing privacy and light control. Our roller blinds combine functionality with style, offering precise control over light and privacy. Available in various fabrics and opacity levels, they're a sleek, contemporary solution for any window.",
-        imageSrc: "/roller.png",
+        imageSrc: "/roller.webp",
         category: "curtains",
         price: "Starting from 180 QAR/sqm",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Roller%20Blinds"
@@ -76,7 +76,7 @@ const ProductDetail = () => {
         id: "elegant-curtains",
         name: "Elegant Curtains",
         description: "Beautiful curtains to enhance the ambiance of your living spaces. Our selection includes a variety of fabrics, patterns, and designs that can transform any room. From sheer voiles to blackout options, we have curtains to suit every need and décor style.",
-        imageSrc: "/curtain.png",
+        imageSrc: "/curtain.webp",
         category: "curtains",
         price: "Starting from 150 QAR/sqm",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Elegant%20Curtains"
@@ -85,7 +85,7 @@ const ProductDetail = () => {
         id: "modern-sofas",
         name: "Modern Sofas",
         description: "Contemporary sofas designed for comfort and style. Our modern sofas combine sleek design with exceptional comfort, creating the perfect centerpiece for your living space. Available in various sizes, configurations, and upholstery options to complement your interior design.",
-        imageSrc: "/sofa.png",
+        imageSrc: "/sofa.webp",
         category: "furniture",
         price: "Starting from 1800 QAR",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Sofas"
@@ -94,7 +94,7 @@ const ProductDetail = () => {
         id: "majlis-sets",
         name: "Majlis Sets",
         description: "Traditional yet modern majlis sets perfect for Qatari homes. Our majlis sets honor cultural traditions while incorporating contemporary comfort and style. Each set is carefully crafted with attention to detail, providing a welcoming space for family gatherings and entertaining guests.",
-        imageSrc: "/majlis-sofa.png",
+        imageSrc: "/majlis-sofa.webp",
         category: "furniture",
         price: "Starting from 4500 QAR",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Majlis%20Sets"
@@ -103,7 +103,7 @@ const ProductDetail = () => {
         id: "luxury-interior-design",
         name: "Luxury Interior Design",
         description: "Complete interior design service tailored to your preferences and lifestyle. Our expert designers work closely with you to create bespoke interiors that reflect your personality and enhance your living experience. From concept to completion, we handle every aspect of the design process.",
-        imageSrc: "/interior.png",
+        imageSrc: "/interior.webp",
         category: "interior",
         price: "Starting from 10000 QAR",
         whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Interior%20Design%20Services"

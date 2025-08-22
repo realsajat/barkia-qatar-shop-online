@@ -36,7 +36,7 @@ const Products = () => {
       id: "premium-barkia",
       name: "Premium Barkia",
       description: "High-quality Barkia panels for elegant room separation and decoration.",
-      imageSrc: "/barkia.png",
+      imageSrc: "/barkia.webp",
       category: "barkia",
       price: "Starting from 350 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Premium%20Barkia"
@@ -45,7 +45,7 @@ const Products = () => {
       id: "pvc-barkia",
       name: "PVC Barkia",
       description: "Durable and water-resistant PVC Barkia perfect for high-moisture areas.",
-      imageSrc: "/pvc-barkia.png",
+      imageSrc: "/pvc-barkia.webp",
       category: "barkia",
       price: "Starting from 250 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20PVC%20Barkia"
@@ -54,7 +54,7 @@ const Products = () => {
       id: "luxury-carpets",
       name: "Luxury Carpets",
       description: "Soft, durable carpets that add comfort and style to any room.",
-      imageSrc: "/carpet.png",
+      imageSrc: "/carpet.webp",
       category: "carpet",
       price: "Starting from 120 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Carpets"
@@ -63,7 +63,7 @@ const Products = () => {
       id: "grass-carpet",
       name: "Grass Carpet",
       description: "Natural-looking grass carpets ideal for outdoor areas and balconies.",
-      imageSrc: "/grass-carpet.png",
+      imageSrc: "/grass-carpet.webp",
       category: "carpet",
       price: "Starting from 80 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Grass%20Carpet"
@@ -72,7 +72,7 @@ const Products = () => {
       id: "roller-blinds",
       name: "Roller Blinds",
       description: "Modern roller blinds providing privacy and light control.",
-      imageSrc: "/roller.png",
+      imageSrc: "/roller.webp",
       category: "curtains",
       price: "Starting from 180 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Roller%20Blinds"
@@ -81,7 +81,7 @@ const Products = () => {
       id: "elegant-curtains",
       name: "Elegant Curtains",
       description: "Beautiful curtains to enhance the ambiance of your living spaces.",
-      imageSrc: "/curtain.png",
+      imageSrc: "/curtain.webp",
       category: "curtains",
       price: "Starting from 150 QAR/sqm",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Elegant%20Curtains"
@@ -90,7 +90,7 @@ const Products = () => {
       id: "modern-sofas",
       name: "Modern Sofas",
       description: "Contemporary sofas designed for comfort and style.",
-      imageSrc: "/sofa.png",
+      imageSrc: "/sofa.webp",
       category: "furniture",
       price: "Starting from 1,800 QAR",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Modern%20Sofas"
@@ -99,7 +99,7 @@ const Products = () => {
       id: "majlis-sets",
       name: "Majlis Sets",
       description: "Traditional yet modern majlis sets perfect for Qatari homes.",
-      imageSrc: "/majlis-sofa.png",
+      imageSrc: "/majlis-sofa.webp",
       category: "furniture",
       price: "Starting from 4,500 QAR",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Majlis%20Sets"
@@ -108,7 +108,7 @@ const Products = () => {
       id: "luxury-interior-design",
       name: "Luxury Interior Design",
       description: "Complete interior design service tailored to your preferences and lifestyle.",
-      imageSrc: "/interior.png",
+      imageSrc: "/interior.webp",
       category: "interior",
       price: "Starting from 10,000 QAR",
       whatsappLink: "https://wa.me/+97455512858?text=I'm%20interested%20in%20Luxury%20Interior%20Design%20Services"

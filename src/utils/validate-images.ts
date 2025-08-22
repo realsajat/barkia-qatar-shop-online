@@ -9,47 +9,47 @@ const allProducts = [
   {
     id: "premium-barkia",
     name: "Premium Barkia",
-    imageSrc: "/barkia.png",
+    imageSrc: "/barkia.webp",
   },
   {
     id: "pvc-barkia",
     name: "PVC Barkia",
-    imageSrc: "/pvc-barkia.png",
+    imageSrc: "/pvc-barkia.webp",
   },
   {
     id: "luxury-carpets",
     name: "Luxury Carpets",
-    imageSrc: "/carpet.png",
+    imageSrc: "/carpet.webp",
   },
   {
     id: "grass-carpet",
     name: "Grass Carpet",
-    imageSrc: "/grass-carpet.png",
+    imageSrc: "/grass-carpet.webp",
   },
   {
     id: "roller-blinds",
     name: "Roller Blinds",
-    imageSrc: "/roller.png",
+    imageSrc: "/roller.webp",
   },
   {
     id: "elegant-curtains",
     name: "Elegant Curtains",
-    imageSrc: "/curtain.png",
+    imageSrc: "/curtain.webp",
   },
   {
     id: "modern-sofas",
     name: "Modern Sofas",
-    imageSrc: "/sofa.png",
+    imageSrc: "/sofa.webp",
   },
   {
     id: "majlis-sets",
     name: "Majlis Sets",
-    imageSrc: "/majlis-sofa.png",
+    imageSrc: "/majlis-sofa.webp",
   },
   {
     id: "luxury-interior-design",
     name: "Luxury Interior Design",
-    imageSrc: "/interior.png",
+    imageSrc: "/interior.webp",
   }
 ];
 
