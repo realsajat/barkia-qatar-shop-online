@@ -1,20 +1,20 @@
 import React from 'react';
 
 const logos = [
-  { src: '/logos/logo1.png', alt: 'Ezdan Mall' },
-  { src: '/logos/logo2.png', alt: 'Enormous' },
-  { src: '/logos/logo3.png', alt: 'Festival City' },
-  { src: '/logos/logo4.png', alt: 'Al Khalij' },
-  { src: '/logos/logo5.png', alt: 'Al Arabia' },
-  { src: '/logos/logo6.png', alt: 'AL MUFTAH GROUP' },
-  { src: '/logos/logo7.png', alt: 'Al Anaka event planning' },
-  { src: '/logos/logo8.png', alt: 'ALSAM Trading & contacting service L.L.C' },
-  { src: '/logos/logo9.png', alt: 'GRADE ONE Trading & Contracting' },
-  { src: '/logos/logo10.png', alt: 'Inworth' },
-  { src: '/logos/logo11.png', alt: 'Petro guard offshore  Shapelier' },
-  { src: '/logos/logo12.png', alt: 'Asia trading Engineering & Services' },
-  { src: '/logos/logo13.png', alt: 'Aquatech for trading & contracting WLL' },
-  { src: '/logos/logo14.png', alt: 'New star Contracting Co W.L.L' },
+  { src: '/logos/logo1.webp', alt: 'Ezdan Mall' },
+  { src: '/logos/logo2.webp', alt: 'Enormous' },
+  { src: '/logos/logo3.webp', alt: 'Festival City' },
+  { src: '/logos/logo4.webp', alt: 'Al Khalij' },
+  { src: '/logos/logo5.webp', alt: 'Al Arabia' },
+  { src: '/logos/logo6.webp', alt: 'AL MUFTAH GROUP' },
+  { src: '/logos/logo7.webp', alt: 'Al Anaka event planning' },
+  { src: '/logos/logo8.webp', alt: 'ALSAM Trading & contacting service L.L.C' },
+  { src: '/logos/logo9.webp', alt: 'GRADE ONE Trading & Contracting' },
+  { src: '/logos/logo10.webp', alt: 'Inworth' },
+  { src: '/logos/logo11.webp', alt: 'Petro guard offshore  Shapelier' },
+  { src: '/logos/logo12.webp', alt: 'Asia trading Engineering & Services' },
+  { src: '/logos/logo13.webp', alt: 'Aquatech for trading & contracting WLL' },
+  { src: '/logos/logo14.webp', alt: 'New star Contracting Co W.L.L' },
 ];
 
 const TrustedBy: React.FC = () => {
@@ -36,7 +36,7 @@ const TrustedBy: React.FC = () => {
         >
           <div className="flex w-max animate-scroll">
             {extendedLogos.map((logo, index) => {
-              const isLarger = logo.src === '/logos/logo2.png' || logo.src === '/logos/logo3.png';
+              const isLarger = logo.src === '/logos/logo2.webp' || logo.src === '/logos/logo3.webp';
               const logoClass = `w-auto object-contain transition-all duration-300 ${isLarger ? 'max-h-24 sm:max-h-36' : 'max-h-20 sm:max-h-28'}`;
 
               return (
